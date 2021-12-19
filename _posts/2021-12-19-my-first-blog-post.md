@@ -1,3 +1,8 @@
+---
+title: "Critical Thinking in Rreading Books, Projects"
+date: 2021-12-19
+---
+
 Critical Thinking on Projects and new leaning
 1. Ask 5 why's 
 This is a tip from consulting. They repeatedly ask questions like A 4-year-old until they reach the root cause. Whenever you read new stuff ask why until you reach an answer.
