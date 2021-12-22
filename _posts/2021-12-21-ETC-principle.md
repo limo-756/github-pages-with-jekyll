@@ -1,19 +1,28 @@
 ---
-title: "The ETC principle"
-date: 2021-12-21
+title: "How does Design Principle follow ETC principle"
+date: 2021-12-22
 ---
 
 Credits: The Pragmatic Programmer by David Thomas and Andrew Hunt
 
-What is the ETC principle?
-Every code change that you make should be easier to change/modify in the future. As good designs are easier to change than bad designs.
+Challenge from The Pragmatic Programmer - Explain how does design principle follow the ETC principle?
+ETC means - Easy to change
 
-How to incorporate the ETC principle in life?
-Whenever you make a code change ask yourself. Did the change that I made make the overall system easier or harder to change?
+1. Single Responsibility Principle
+It states that a class should only be responsible for 1 task/responsibility. Hence there should be only 1 reason to change for a class.
+This principle enforces the ETC principle since on any new requirement, change will be isolated in 1 class or 1 part of the code and It will make code easy to change and prevent un-intended side effects.
 
-What to do when you don't have any clue about what type of form change make take in the future?
-1. Ask yourself is it easy to change? Is it easily replaceable? It's a way to keep code decoupled and cohesive.
-2. Whenever you make a choice add a tag in the code, that way you will be able to reflect upon your choices when the actual change comes. And It might help you next time when you reach a similar situation.
+2. Open closed Principle
+This principle says that code should be open for extension but closed for modification. For Eg: Observer Pattern that follows this principle makes it easy to add new observers.
+We should use design patterns and techniques that allow us to easily add new behavior without modification.
+This principle follows the ETC principle as it promotes techniques that make code easily extendable without the need for modification. As we all know that it's much easier to add brand new code to the code base than re-writing old stuff.
+Hence it follows the ETC principle.
 
-Challenge for me
-Add an extension in Sublime and Intellij whenever I commit, it will show me ETC principal. This way I will be able to incorporate it into my life.
+3. Dependency inversion Principle
+This principle says that you should depend on abstractions (an interface) than concrete implementations. This principle makes code easy to change as we can replace concrete implementation with any other implementation which conforms to our abstraction.
+
+4. Interface Segregation Principle
+This principle says that we should have smaller interfaces instead of 1 bulky interface. As it makes it easier for clients to depend on methods that they use.
+
+5. Liskov substitution principle
+This principle states that concrete classes should be replaceable with the base class. This principle promotes bug-free code, Hence easier to change
