@@ -1,6 +1,6 @@
 ---
 title: "The ETC principle"
-date: 2021-12-20
+date: 2021-12-21
 ---
 
 Credits: The Pragmatic Programmer by David Thomas and Andrew Hunt
