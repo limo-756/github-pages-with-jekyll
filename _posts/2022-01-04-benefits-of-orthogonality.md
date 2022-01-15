@@ -11,3 +11,5 @@ When components are isolated from one another we can change one without having t
 1. Gain Productivity
 1.1 Changes are localized, so development and time testing time are reduced. There is no need to keep changing existing code as you add new code.
 1.2 If a component has specific and well-defined responsibility then it can be combined with new components in an intuitive, straightforward way without any side effects.
+1.3 If a module has M things, and another module has N things then you can combine them in M X N ways. But if they overlap the number of possibilities will decrease.
+
