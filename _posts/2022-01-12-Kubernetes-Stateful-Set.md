@@ -11,3 +11,8 @@ Kubernetes gives every pod a name and DNS name through which you can communicate
 
 How to connect with other active members of the statefulset?
 You should query the CNAME of the headless Service (eg : nginx.default.svc.cluster.local). The SRV records associated with the CNAME will contain only the Pods in the StatefulSet that are Running and Ready.
+
+
+Limitations of Statefulset
+1. Scaling down of statefulset will not delete the persistence memory. This is done to ensure data safety.
+2. Satefulset require a headless service for network identity and user itself have to define this headless service.
