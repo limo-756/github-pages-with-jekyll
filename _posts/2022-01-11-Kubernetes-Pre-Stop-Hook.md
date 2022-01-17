@@ -9,5 +9,21 @@ But if your application does a lot of cron jobs your application then data might
 
 What does pre-stop hook do?
 Kubernetes sends pre-hook notifications before termination so that your application can terminate gracefully.
-Pre hook notification can be configured as an HTTP end-point or as a system command or as an env variable.
+Pre hook notification can be configured as an HTTP end-point or as a system command or as an shell script.
 
+Eg of shell script: 
+    lifecycle:
+      preStop:
+        exec:
+          command: ["/bin/sh","-c","nginx -s quit; while killall -0 nginx; do sleep 1; done"]
+          
+          
+Eg of HTTP Get req:
+    lifecycle:
+      preStop:
+        httpGet:
+          path: /pre-stop
+          port: 9443
+          httpHeaders:
+            - name: Authorization
+              value: Awesome
