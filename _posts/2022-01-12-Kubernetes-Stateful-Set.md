@@ -16,3 +16,4 @@ You should query the CNAME of the headless Service (eg : nginx.default.svc.clust
 Limitations of Statefulset
 1. Scaling down of statefulset will not delete the persistence memory. This is done to ensure data safety.
 2. Satefulset require a headless service for network identity and user itself have to define this headless service.
+3. Satefulset are harder to roolback
