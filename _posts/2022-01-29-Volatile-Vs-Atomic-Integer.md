@@ -4,9 +4,15 @@ date: 2022-01-29
 ---
 
 ### What is a volatile variable? When to use a volatile variable? What is does?  
-Volatile is a special keyword in java. Volatile solves the visibility problem, it instructs JVM to flush down the variable value down to the shared cache so that other threads read the updated value.  
-For eg: Let's say we have a producer and consumer who only operate on a single item. They share a flag variable isAvailable that is set to true by the producer once the item is ready and then the producer goes to sleep. The consumer is checking this variable in an infinite loop, as soon, as it becomes true it starts consuming.  
+Volatile is a special keyword in java. Volatile solves the visibility problem, once the write operation is complete it makes the updated value visible to all the readers. Without volatile keyword readers could see some non-updated value  
 
-The problem here is that both producer and consumer are running on separate threads. Hence, the producer thread could update the local cache but the consumer cannot read the updated value.  
+For eg: Let's say we have 2 threads. First thread is doing some task in a loop, it checks flag value to decide when to come out of the loop. Second thread is responsible to make the flag false so that first thread doesn't get trapped in infinite loop. If we declare the flag as volatile then whenver the second thread makes it value false, then JVM will flush the updated value to shared cache and refresh all the cores cache so that they also have updated value of this flag.  
+  
 
-#### Credits - https://www.youtube.com/watch?v=WH5UvQJizH0&list=PLhfHPmPYPPRk6yMrcbfafFGSbE2EPK_A6
+### What is Atomic Integer? When to use Atomic variable? What it does?
+Atomic variables are thread safe, if we are updating same variable through multiple threads then due to race condition inconsistency can occur. AtomicInteger can be used for such cases.
+  
+
+##### Credits -  
+1. https://www.youtube.com/watch?v=WH5UvQJizH0&list=PLhfHPmPYPPRk6yMrcbfafFGSbE2EPK_A6
+2. https://stackoverflow.com/questions/106591/what-is-the-volatile-keyword-useful-for
