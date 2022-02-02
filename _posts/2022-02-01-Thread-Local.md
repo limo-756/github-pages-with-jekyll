@@ -10,6 +10,7 @@ ThreadLocal creates a copy of object per thread to optimize storage. It is essen
 Eg:  
 
 `
+
 class ThreadSafeFormatter {
   public static ThreadLocal<SimpleDateFormat> dateFormatter = new ThreadLocal<SimpleDateFormat>() {
     @Override
@@ -23,4 +24,5 @@ class ThreadSafeFormatter {
     }
   }
 }
+
 `
