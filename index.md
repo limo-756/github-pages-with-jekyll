@@ -20,7 +20,7 @@ I love coding and automating/solving daily life issues. I also love doing all so
  - Favourite Anime - Full metal alchemists, Naruto
  - Favourite books - JAVA Concurrency In Practice, Clean code, pragmatic programmer, Test Driven Development
  - Love Indian food over western food
- - pure vegetarian
+ - Pure vegetarian
  - Like Lata Mangeshkar and Kishor Kumar songs
 
 ## Social Media
@@ -30,7 +30,7 @@ I encourage you to check out my content on all social media platforms
     LinkedIn: https://www.linkedin.com/in/anurag-sharma-568006113/
     GitHub: https://github.com/limo-756
 
-Photos
+## Photos
 Here are a few photos from a trip to Udaipur I took last year
 
 ![Udaipur Palace](_posts/assets/home/palace.jpeg "Udaipur Palace")
