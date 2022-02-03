@@ -10,7 +10,6 @@ ThreadLocal stores data inside of a map with the thread as the key.
 
 Eg:  
 
-`
     class ThreadSafeFormatter {
       public static ThreadLocal<SimpleDateFormat> dateFormatter = new ThreadLocal<SimpleDateFormat>() {
         @Override
@@ -25,13 +24,11 @@ Eg:
       }
     }
 
-`
 
 What are the drawbacks of ThreadLocal?
 Manual cleaning of data is required once the thread has finished the task. This could be error-prone and require strict review.  
 One way to over-come this limitation is to use ThreadPoolExecutor class custom hooks beforeExecute() and afterExecute() methods. Eg:
 
-`
     public class ThreadLocalAwareThreadPool extends ThreadPoolExecutor {
 
         @Override
@@ -39,4 +36,3 @@ One way to over-come this limitation is to use ThreadPoolExecutor class custom h
             // Call remove on each ThreadLocal
         }
     }
-`
