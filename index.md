@@ -4,7 +4,7 @@ title: "Home"
 
 ## About me
 
-![my-photo](./_posts/assets/home/self-image.JPG "Anurag Sharma")
+![my-photo]("_posts/assets/home/self-image.JPG" "Anurag Sharma")
 
 Hi, my name is Anurag and I am a Software Engineer who focuses on content related to software engineering and machine learning!  
 
