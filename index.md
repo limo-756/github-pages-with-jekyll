@@ -33,7 +33,7 @@ I encourage you to check out my content on all social media platforms
 ## Photos
 Here are a few photos from a trip to Udaipur I took last year
 
-- ![Udaipur Palace](./_posts/assets/home/palace.jpeg "Udaipur Palace")
-- ![Udaipur Palace back view](./_posts/assets/home/palace-second-view.jpeg "Udaipur Palace back view")
-- ![Udaipur Lake](./_posts/assets/home/lake.jpeg "Udaipur Lake")
-- ![Random Photo](./_posts/assets/home/random.jpeg "Random Photo")
+- ![Udaipur Palace](assets/palace.jpeg "Udaipur Palace")
+- ![Udaipur Palace back view](assets/palace-second-view.jpeg "Udaipur Palace back view")
+- ![Udaipur Lake](assets/lake.jpeg "Udaipur Lake")
+- ![Random Photo](assets/random.jpeg "Random Photo")
