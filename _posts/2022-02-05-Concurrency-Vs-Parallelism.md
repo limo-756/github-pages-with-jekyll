@@ -3,15 +3,11 @@ title: "Concurrency vs Parallelism"
 date: 2022-02-05
 ---
 
-### What is Prallelism?
-Parallelism means literally executing tasks parralelly on differents cores to speed up the execution of program.  
+### What is Parallelism?
+Parallelism means literally executing tasks parallelly on different cores to speed up the execution of the program.  
 
 ### What is Concurrency?
-Concurrency means executing tasks in overlapping intervals on single or multi-core machine. It appears to end user like tasks are gtting completed in parralel. Concurrency takes help of time-slicing concept of OS. 
-
-### What is Interleaving of threads?
-OS scheduler schedules the threads on core one after the other in round-robin fashion this is called interleaving of threds.
-
+Concurrency means executing tasks in overlapping intervals on a single or multi-core machine in no specific order. Concurrency takes the help of the time-slicing concept of OS where every thread gets a chance to execute part of its task and go to the waiting state. When the first task goes to the waiting state other threads get a chance to CPU and other computing resources like Memory based on the priority of the task. It appears to end-user tasks are getting completed in parallel
 
 ##### Credits :  
 
