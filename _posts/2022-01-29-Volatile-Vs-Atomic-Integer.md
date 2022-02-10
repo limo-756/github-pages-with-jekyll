@@ -7,7 +7,9 @@ date: 2022-01-29
 Volatile is a special keyword in java. Volatile solves the visibility problem, once the write operation is complete it makes the updated value visible to all the readers. Without volatile keyword, readers could see some non-updated value  
 
 For eg: Let's say we have 2 threads. The first thread is doing some task in a loop, it checks flag value to decide when to come out of the loop. The second thread is responsible to make the flag false so that the first thread doesn't get trapped in an infinite loop. If we declare the flag as volatile whenever the second thread makes its value false, then JVM will flush the updated value to the shared cache and refresh all the cores cache so that they also have the updated value of this flag.  
-  
+
+#### What is volatile happens before guarantee?
+When JVM encounters a volatile variable it flushes all the variables used in the same scope before the volatile variable. This **happens before** concept is also applicable to synchronize keyword, synchronize methods, locks, concurrent collections, thread methods like join and start.    
 
 ### What is Atomic Integer? When to use the AtomicInteger? What does it do?
 Atomic variables are thread-safe, if we are updating the same variable through multiple threads then due to race condition inconsistency can occur. AtomicInteger can be used for such cases. AtomicInteger instructs JVM to do read & write operations atomically. Profiling shows that they Atomic variables perform better than the equivalent methods using synchronization. For example, a get() operation on an AtomicReference requires only a fetch from main memory, while an a similar operation using synchronized must first flush any values cached by threads to main memory and then perform its fetch. The AtomicXXX classes provide access to native support for compare-and-swap (CAS) operations. If the underlying system supports it, CAS will be faster than any scheme cooked up with synchronized blocks in pure Java.  
@@ -49,8 +51,10 @@ Use cases of AtomicReference : It is used in caches, to prevent multiple threads
 
 ##### Credits :  
 
-1. [Defog Tech : Using volatile vs AtomicInteger in Java concurrency](https://www.youtube.com/watch?v=WH5UvQJizH0&list=PLhfHPmPYPPRk6yMrcbfafFGSbE2EPK_A6)
-2. [Stackoverflow: What is the volatile keyword useful for?](https://stackoverflow.com/questions/106591/what-is-the-volatile-keyword-useful-for)
-3. [Stackoverflow: Practical uses of AtomicInteger](https://stackoverflow.com/questions/4818699/practical-uses-for-atomicinteger)
-4. [Pact Video](https://www.youtube.com/watch?v=-XipPj3tUu0)
-5. [stackoverflow: When to use AtomicReference](https://stackoverflow.com/questions/2932505/when-to-use-atomicreference-java-is-it-really-necessary)
+1. [Defog Tech: Using volatile vs AtomicInteger in Java concurrency](https://www.youtube.com/watch?v=WH5UvQJizH0&list=PLhfHPmPYPPRk6yMrcbfafFGSbE2EPK_A6)
+2. [Defog Tech: Java Memory Model in 10 minutes](https://www.youtube.com/watch?v=Z4hMFBvCDV4&list=PLhfHPmPYPPRk6yMrcbfafFGSbE2EPK_A6&index=4&t=379s)
+3. [Jenkov: Java Volatile Keyword](http://tutorials.jenkov.com/java-concurrency/volatile.html)
+4. [Stackoverflow: What is the volatile keyword useful for?](https://stackoverflow.com/questions/106591/what-is-the-volatile-keyword-useful-for)
+5. [Stackoverflow: Practical uses of AtomicInteger](https://stackoverflow.com/questions/4818699/practical-uses-for-atomicinteger)
+6. [Pact Video](https://www.youtube.com/watch?v=-XipPj3tUu0)
+7. [stackoverflow: When to use AtomicReference](https://stackoverflow.com/questions/2932505/when-to-use-atomicreference-java-is-it-really-necessary)
