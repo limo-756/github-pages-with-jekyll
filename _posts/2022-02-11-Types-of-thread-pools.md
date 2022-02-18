@@ -15,7 +15,37 @@ date: 2022-02-07
     2. tasks do not share common varuables
     3. No syncronisation needed
     4. No blocking IO call
-5. Scheduled thread pool: It is a single threaded thread pool. Task provided to this executor is run repeatedly.
+    
+Eg:  
+
+    public class FibNumberCalculator extends RecursiveTask<Integer> {
+
+      final int n;
+      public FibNumberCalculator(int n) {
+          this.n = n;
+      }
+
+      @Override
+      public Integer compute() {
+          if (n <= 1) return n;
+
+          FibNumberCalculator f1 = new FibNumberCalculator(n -1);
+          FibNumberCalculator f2 = new FibNumberCalculator(n -2);
+          f1.fork();
+          f2.fork();
+          int x = f1.join() + f2.join();
+          return x;
+      }
+
+      public static void main(String[] args) {
+          ForkJoinPool forkJoinPool = new ForkJoinPool();
+          ForkJoinTask<Integer> result = forkJoinPool.submit(new ForkJoinService(10));
+          System.out.println("Result of fib 10 : " + result.join());
+      }
+    }
+   
+    
+4. Scheduled thread pool: It is a single threaded thread pool. Task provided to this executor is run repeatedly.
 
 ### Ways to submit tasks
 1. Runnable task: we can submit a runnable task which implements Runnable interface to executor service. This type of task do not return anything to invoker once the task is executed.
