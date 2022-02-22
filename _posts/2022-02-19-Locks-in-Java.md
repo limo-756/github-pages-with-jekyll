@@ -9,6 +9,10 @@ Every object in java is a monitor object. On a monitor we can take locks.
 ### Semaphore
 Semaphore are used to limit the number of concurrent threads accessing a resource.  
 
+Methods in Semaphore
+1. acquire(): Acquire a permit from the semaphore if available and do rest of the processing. If the permit is unavilable then thread is blocked and moved to waiting queue until some other thread releases the permit or some other thread interrupts the current thread.
+2. release(): Releases a permit and return it to semaphore. 1 thread waiting on this semaphore is selected and awarded released semaphore.
+
 Uses of Semnaphore
 1. It is used to limit the access to shared resources. Eg: We have a slow service that can handle only 3 requests at a time, we can use a Semaphore to limit access.
 
