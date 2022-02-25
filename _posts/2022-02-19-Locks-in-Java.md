@@ -4,7 +4,7 @@ date: 2022-02-19
 ---
 
 ### Monitor
-Every object in java is a monitor object. On a monitor, we can take locks.
+Every object in java is a monitor object. Monitors have lock and wait set. Monitors allow a single thread to execute once in critical section.
 
 ### Semaphore
 Semaphores are used to limit the number of concurrent threads accessing a resource.  
@@ -24,3 +24,4 @@ Uses of Semaphore
 1. [Defog Tech: Lock's Condition class in Java](https://www.youtube.com/watch?v=N0mMm5PF5Ow&list=PLhfHPmPYPPRk6yMrcbfafFGSbE2EPK_A6&index=10)
 2. [Defog Tech: Semaphore in Java Concurrency](https://www.youtube.com/watch?v=shH38znT_sQ)
 3. [Java Point: Java Semaphore](https://www.javatpoint.com/java-semaphore)
+4. [MIT EDU: Monitors](http://web.mit.edu/javadev/doc/tutorial/java/threads/monitors.html)
