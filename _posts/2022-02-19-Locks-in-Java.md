@@ -9,6 +9,12 @@ Every object in java is a monitor object. Monitors have lock and wait set. Monit
 ### Semaphore
 Semaphores are used to limit the number of concurrent threads accessing a resource.  
 
+Types of Semaphore  
+1. Counting Semaphores: It is the most simple semaphore. It contains a perdefined permits.
+2. Bounded Semaphores: Same as counting semaphores but that they are bounded and cannot go beyond upper bound.
+3. Timed Semaphores: It allow access to shared resource only for specifed time.
+4. Binary Semaphores: Same as counting semaphore but its capacity is only 1 or 2.
+
 Methods in Semaphore
 1. acquire(): Acquire a permit from the semaphore if available and do the rest of the processing. If the permit is unavailable then the thread is blocked and moved to the waiting queue until some other thread releases the permit or some other thread interrupts the current thread.
 2. acquireUninterruptibly(): Same as acquire() method, with 1 difference that if the thread is in the waiting queue and some other thread interrupts this thread then this thread will continue to wait for a permit. But, when this thread comes out of the wait state then its interrupt status will be set
