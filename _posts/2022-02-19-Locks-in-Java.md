@@ -4,16 +4,16 @@ date: 2022-02-19
 ---
 
 ### Monitor
-Every object in java is a monitor object. Monitors have lock and wait set. Monitors allow a single thread to execute once in critical section. JVM ensures that monitors are acquired and realeased automatically and atomically so that race condition cannot occur while acquiring and releasing monitors.
+Every object in java is a monitor object. Monitors have a lock and wait set. Monitors allow a single thread to execute once in the critical section. JVM ensures that monitors are acquired and released automatically and atomically so that race conditions cannot occur while acquiring and releasing monitors.
 
 ### Semaphore
 Semaphores are used to limit the number of concurrent threads accessing a resource.  
 
 Types of Semaphore  
-1. Counting Semaphores: It is the most simple semaphore. It contains a perdefined permits.
-2. Bounded Semaphores: Same as counting semaphores but that they are bounded and cannot go beyond upper bound.
-3. Timed Semaphores: It allow access to shared resource only for specifed time.
-4. Binary Semaphores: Same as counting semaphore but its capacity is only 1 or 2.
+1. Counting Semaphores: It is the most simple semaphore. It is used to limit concurrent access to shared resources.
+2. Bounded Semaphores: Same as counting semaphores. The acquire() and release() methods are independent of each other and it is possible to release more permits than acquired. Bounded Semaphore is bounded and cannot go beyond the upper bound.
+3. Timed Semaphores: It allows access to a shared resource only for a specified time. After the timer is reset all the permits are released allowing other threads to acquire permits.
+4. Binary Semaphores: Same as counting semaphore but it is binary (i.e. 0 or 1 permits allowed).
 
 Methods in Semaphore
 1. acquire(): Acquire a permit from the semaphore if available and do the rest of the processing. If the permit is unavailable then the thread is blocked and moved to the waiting queue until some other thread releases the permit or some other thread interrupts the current thread.
