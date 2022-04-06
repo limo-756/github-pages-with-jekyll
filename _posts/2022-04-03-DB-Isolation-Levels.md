@@ -3,6 +3,9 @@ title: "Isolation levels in Databases"
 date: 2022-04-03
 ---
 
+### What is Isolation property?
+Isolation in DB means how and when updates made by a transaction are visible to other transactions.
+
 ### Isolation levels in DB
 1. Read Uncommitted : In this isolation level the transaction can read uncommitted changes done by another transaction.
 2. Read Committed : In this isolation level the transaction can only read the committed changes.
