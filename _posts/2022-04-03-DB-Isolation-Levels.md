@@ -13,7 +13,7 @@ date: 2022-04-03
 Eg: 
 
 ### What is Phantom read? 
-
+If in a transaction, a read query is performed 2 times then in result of 2 queries there could be difference of rows. As some other transaction can insert a row.
 
 ##### Credits :  
 1. [Why do We Have Repeatable Read and Serializable Isolation Levels?](https://www.youtube.com/watch?v=xR70UlE_xbo)
