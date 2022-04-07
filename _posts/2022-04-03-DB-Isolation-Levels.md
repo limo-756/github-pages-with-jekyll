@@ -16,7 +16,7 @@ Isolation in DB means how and when updates made by a transaction are visible to 
 Eg: 
 
 ### What is Phantom read? 
-If in a transaction, a read query is performed 2 times then in result of 2 queries there could be difference of rows. As some other transaction can insert a row.
+If in a transaction, a read query is performed 2 times then in result of 2 queries there could be difference of rows. As some other transaction can insert a row. This can occur when range locks are not acquired on performing a SELECT, WHERE operation.
 
 ##### Credits :  
 1. [Why do We Have Repeatable Read and Serializable Isolation Levels?](https://www.youtube.com/watch?v=xR70UlE_xbo)
