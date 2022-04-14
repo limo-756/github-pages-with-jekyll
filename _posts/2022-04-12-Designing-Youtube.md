@@ -17,18 +17,33 @@ date: 2022-04-12
 3. System should be reliable and no data should be lost.
 
 ### Capacity Estimations and Constraints
-Lets assume Youtube has 2 billion daily active users. Each user watches 5 videos a day and average size of video is 10 min.
-Number of Video Views per sec = (2 * 10^9 * 5)/(24 * 60 * 60) = 10^5 videos/sec
-Lets suppose video upload to video view ratio is 1:100
-Number of Video uploaded per sec = 10^5/100 = 1000 videos/sec
-
-### Storage required per sec
-Lets assume for every 1 min video we need 10 MB space
-New uploads = 1000 * 10min * 10MB = 100GB per sec
-
+Lets assume Youtube has 2 billion daily active users. Each user watches 5 videos a day and average size of video is 10 min.  
+Number of Video Views per sec = (2 * 10^9 * 5)/(24 * 60 * 60) = 10^5 videos/sec  
+Lets suppose video upload to video view ratio is 1:100  
+Number of Video uploaded per sec = 10^5/100 = 1000 videos/sec  
+  
+### Storage required per sec  
+Lets assume for every 1 min video we need 10 MB space  
+New uploads = 1000 * 10min * 10MB = 100GB per sec  
+  
 ### Bandwidth estimation
-Incoming bandwidth = 1000 Video/sec * 10MB/60 = 166 MB per sec
-Outgoing bandwith = 16.6 GB per sec
+Incoming bandwidth = 1000 Video/sec * 10MB/60 = 166 MB per sec  
+Outgoing bandwith = 16.6 GB per sec  
+  
+### API Design
+#### UploadVideo
+uploadVideo(apiKey, videoContent, title, description, tags, categoryId, subtitles, language, location)  
+apiKey : token through which user will be authenticated and throttled in case of limit accede or abuse.  
+videoContent : the video file to be uploaded it could be in bytes and compressed.  
+title : title of the video  
+description : <optional> description of the video  
+tags : <optional> tags for the video, will help to improve video rank  
+categoryId : <optional> categoryId of the video  
+subtitles : <optional> subtitle list for video  
+language : <optional> language of the video  
+location : <optional> country/region of the user  
+  
+Response : 202 Request Accepted If the video validations are passed. An email will be triggered to user with link to access the video once encoding is complete. Alternatively we can provide API to check video status also.
 
 ##### Credits :  
 1. [educative.io: Designing Youtube or Netflix](https://www.youtube.com/watch?v=ImtZgX1nmr8&list=PLhfHPmPYPPRk6yMrcbfafFGSbE2EPK_A6&index=12)
