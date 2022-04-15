@@ -43,7 +43,19 @@ subtitles : <optional> subtitle list for video
 language : <optional> language of the video  
 location : <optional> country/region of the user  
   
-Response : 202 Request Accepted If the video validations are passed. An email will be triggered to user with link to access the video once encoding is complete. Alternatively we can provide API to check video status also.
-
+Response: 202 Request Accepted If the video validations are passed. An email will be triggered to user with link to access the video once encoding is complete. Alternatively we can provide API to check video status also.
+  
+#### Search Video
+SearchVideo(apiKey, searchQuery, cursor, location)  
+apiKey: token through which user will be authenticated. User primary location and preferences can be loaded using this token.  
+searchQuery: String consisting of search terms.  
+cursor: A pointer to the next result-set. It will be encoded to contain info about partition and also row pointer to the next result.  
+location: <optional> We want the user a option to change its location.  
+  
+Response: A json list containing info about video resources matching query result. Each video resource will have a title, thumbnail, creationDate, author, stats. Also it will return nextCursor, that will be passed in API to fetch next set of videos.
+  
 ##### Credits :  
 1. [educative.io: Designing Youtube or Netflix](https://www.youtube.com/watch?v=ImtZgX1nmr8&list=PLhfHPmPYPPRk6yMrcbfafFGSbE2EPK_A6&index=12)
+2. [Slack Engineering: Evolving API Pagination at Slack](https://slack.engineering/evolving-api-pagination-at-slack/)
+3. [Stackoverflow: How to implement cursors for pagination in an api](https://stackoverflow.com/questions/18314687/how-to-implement-cursors-for-pagination-in-an-api)
+4. [API pagination design](https://solovyov.net/blog/2020/api-pagination-design/)
