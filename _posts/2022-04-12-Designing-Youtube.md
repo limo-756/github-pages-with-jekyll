@@ -54,6 +54,16 @@ location: <optional> We want the user a option to change its location.
   
 Response: A json list containing info about video resources matching query result. Each video resource will have a title, thumbnail, creationDate, author, stats. Also it will return nextCursor, that will be passed in API to fetch next set of videos.
   
+#### Stream Video
+StreamVideo(apiKey, videoId, offset, codec, resolution)  
+  
+apiKey: token through which user will be authenticated  
+videoId: An integer or string id to uniquely identify a video  
+offset: Offset will be in sec from start of video. If multiple devices are supported then we will need to save offset per device to allow user to start video from where they left.  
+codec & resolution: If we support different devices then we will need to support diffrent formats as different devices has different resolution and codec requirements.  
+  
+Response: A video stream (chunk of video)  
+  
 ##### Credits :  
 1. [educative.io: Designing Youtube or Netflix](https://www.youtube.com/watch?v=ImtZgX1nmr8&list=PLhfHPmPYPPRk6yMrcbfafFGSbE2EPK_A6&index=12)
 2. [Slack Engineering: Evolving API Pagination at Slack](https://slack.engineering/evolving-api-pagination-at-slack/)
