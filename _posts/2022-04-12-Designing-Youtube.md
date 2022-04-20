@@ -66,12 +66,14 @@ Response: A video stream (chunk of video)
   
 ### High Level Design
 We will need following components  
-1. Processing Queue: We will need a processing queue for uploaded videos, so that they can be scanned for viruses and all the checks are made.
-2. Encoder: Since we will need to encode each video into multiple formats. We will need a encoder to do this.
-3. User DB: It will contain all the user details like name, email, passwordHash etc. Also, it will contains user view history.
-4. Video & Thumbnail DB: It will be used to store the vedios and thumbnail files in different formats.
-5. Video Metadata DB: It will store video title, views, likes, dislikes etc.
-6. Thumbnail generator: It will be used to generate different thumbnails for a video.
+1. Processing Queue: We will need a processing queue for uploaded videos, so that they can be dequeued later for video processing, thumbnail generation and storage.
+2. Encoder: Since we will need to encode each video into multiple formats. We will need a encoder service to do this.
+3. Thumbnail generator: It will be used to generate different thumbnails for a video.
+4. User DB: It will contain all the user details like name, email, passwordHash etc. Also, it will contains user view history.
+5. Video & Thumbnail DB: It will be used to store the videos and thumbnail files in some distributed file storage.
+6. Video Metadata DB: It will store video title, views, likes, dislikes, pathToFile, uploading user etc. 
+  
+### DB Schema Design
 
 ##### Credits :  
 1. [educative.io: Designing Youtube or Netflix](https://www.educative.io/courses/grokking-the-system-design-interview/xV26VjZ7yMl)
