@@ -74,6 +74,9 @@ We will need following components
 6. Video Metadata DB: It will store video title, views, likes, dislikes, pathToFile, uploading user etc. 
   
 ### DB Schema Design
+We will need following tables:
+1. videos table
+video_id, title, file_path, thumbnails_path, video_stats_id, uploader_id, categories, metadata (country, region, size, length, description)
 
 ##### Credits :  
 1. [educative.io: Designing Youtube or Netflix](https://www.educative.io/courses/grokking-the-system-design-interview/xV26VjZ7yMl)
