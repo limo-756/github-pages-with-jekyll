@@ -77,6 +77,9 @@ We will need following components
 We will need following tables:
 1. videos table
 video_id, title, file_path, thumbnails_path, video_stats_id, uploader_id, categories, metadata (country, region, size, length, description)
+2. comments table
+  comment_id, video_id, parent_id, user_id, comment, created_at, modified_at, likes, dislikes
+  Keys -> PK (comment_id), (video_id, parent_id, likes), (video_id, parent_id, modified_at);
 
 ##### Credits :  
 1. [educative.io: Designing Youtube or Netflix](https://www.educative.io/courses/grokking-the-system-design-interview/xV26VjZ7yMl)
