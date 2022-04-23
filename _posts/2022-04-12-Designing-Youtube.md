@@ -78,11 +78,17 @@ We will need following tables:
 1. videos table
 video_id, title, file_path, thumbnails_path, video_stats_id, uploader_id, categories, metadata (country, region, size, length, description)
 2. comments table
-  comment_id, video_id, parent_id, user_id, comment, created_at, modified_at, likes, dislikes
-  Keys -> PK (comment_id), (video_id, parent_id, likes), (video_id, parent_id, modified_at);
+  comment_id, video_id, parent_id, user_id, comment, created_at, modified_at, likes, dislikes  
+  Keys -> PK (comment_id), (video_id, parent_id, likes), (video_id, parent_id, modified_at)  
+3. 
 
 ##### Credits :  
 1. [educative.io: Designing Youtube or Netflix](https://www.educative.io/courses/grokking-the-system-design-interview/xV26VjZ7yMl)
 2. [Slack Engineering: Evolving API Pagination at Slack](https://slack.engineering/evolving-api-pagination-at-slack/)
 3. [Stackoverflow: How to implement cursors for pagination in an api](https://stackoverflow.com/questions/18314687/how-to-implement-cursors-for-pagination-in-an-api)
 4. [API pagination design](https://solovyov.net/blog/2020/api-pagination-design/)
+5. [Stackoverflow: Implementing Comments and Likes in database](https://stackoverflow.com/questions/8112831/implementing-comments-and-likes-in-database)
+6. [Stackoverflow: Best approach for implementing comments and likes system like Instagram or Twitter](https://stackoverflow.com/questions/52843234/best-approach-for-implementing-comments-and-likes-system-like-instagram-or-twitt?noredirect=1&lq=1)
+7. [Stackoverflow: Liked Posts Design Specifics](https://stackoverflow.com/questions/59505855/liked-posts-design-specifics?noredirect=1&lq=1)
+8. [Stackoverflow: Modeling Upvotes / Likes - one table per type, or one big table?](https://stackoverflow.com/questions/20530614/modeling-upvotes-likes-one-table-per-type-or-one-big-table?noredirect=1&lq=1)
+9. [Stackoverflow: How to store likes and comments of posts in database?](https://dba.stackexchange.com/questions/174878/how-to-store-likes-and-comments-of-posts-in-database)
