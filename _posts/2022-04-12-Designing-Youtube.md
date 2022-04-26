@@ -81,7 +81,13 @@ video_id, title, file_path, thumbnails_path, video_stats_id, uploader_id, catego
   comment_id, video_id, parent_id, user_id, comment, created_at, modified_at, likes, dislikes  
   Keys -> PK (comment_id), (video_id, parent_id, likes), (video_id, parent_id, modified_at)  
   
+### Detailed Component Design
+![Detailed Component Design](assets/YoutubeHighLevelDesign.png "Detailed Component Design")
+  
+
 ### Metadata Sharding
+#### Sharding based on userId
+We can create a hash function that uniqely route all the request for a user to a single server. 
 
 
 ##### Credits :  
@@ -94,3 +100,4 @@ video_id, title, file_path, thumbnails_path, video_stats_id, uploader_id, catego
 7. [Stackoverflow: Liked Posts Design Specifics](https://stackoverflow.com/questions/59505855/liked-posts-design-specifics?noredirect=1&lq=1)
 8. [Stackoverflow: Modeling Upvotes / Likes - one table per type, or one big table?](https://stackoverflow.com/questions/20530614/modeling-upvotes-likes-one-table-per-type-or-one-big-table?noredirect=1&lq=1)
 9. [Stackoverflow: How to store likes and comments of posts in database?](https://dba.stackexchange.com/questions/174878/how-to-store-likes-and-comments-of-posts-in-database)
+10. [Stackoverflow: How sharding a database can make it faster](https://stackoverflow.blog/2022/03/14/how-sharding-a-database-can-make-it-faster/)
