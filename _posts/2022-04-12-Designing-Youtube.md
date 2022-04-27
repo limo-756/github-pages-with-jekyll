@@ -82,13 +82,22 @@ video_id, title, file_path, thumbnails_path, video_stats_id, uploader_id, catego
   Keys -> PK (comment_id), (video_id, parent_id, likes), (video_id, parent_id, modified_at)  
   
 ### Detailed Component Design
-![Detailed Component Design](assets/YoutubeHighLevelDesign.png "Detailed Component Design")
+[Detailed Component Design](assets/YoutubeHighLevelDesign.png "Detailed Component Design")
   
 
 ### Metadata Sharding
-#### Sharding based on userId
-We can create a hash function that uniqely route all the request for a user to a single server. 
+#### Sharding based on UserId
+We can create a hash function that uniqely route all the request for a user to a single server. To search video by title, all the servers will need to be queried and a centralised server will collate, rank and return the result. To search all the videos of a creator, we will only need to lookup single server.
 
+Problems
+1. If a user become popular than that node traffic will be much more than other nodes. Partitioning users will become difficult.
+2. Some users will be bigger than other users and they might not fit on single server. Also, maintaining a unifrom distribution of users will also be difficult some users will be much bigger than others.
+
+#### Sharding based on VideoId
+We can create a hash function that uniquely route all the request for a video to a single server. For video search query, all the servers will need to be queried and a centralised server will collate, rank and return the result.  
+
+Problem
+1. Popular videos will have more traffic than other videos. We will need to identify a popular video and partition data accordingly.
 
 ##### Credits :  
 1. [educative.io: Designing Youtube or Netflix](https://www.educative.io/courses/grokking-the-system-design-interview/xV26VjZ7yMl)
