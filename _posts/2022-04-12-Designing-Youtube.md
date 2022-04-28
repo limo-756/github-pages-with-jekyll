@@ -93,11 +93,18 @@ Problems
 1. If a user become popular than that node traffic will be much more than other nodes. Partitioning users will become difficult.
 2. Some users will be bigger than other users and they might not fit on single server. Also, maintaining a unifrom distribution of users will also be difficult some users will be much bigger than others.
 
+Solution
+To avoid this we will need to redistribute/repartition data on servers that are load heavy. We can use consistency hashing to balance load between servers.
+
 #### Sharding based on VideoId
 We can create a hash function that uniquely route all the request for a video to a single server. For video search query, all the servers will need to be queried and a centralised server will collate, rank and return the result.  
 
 Problem
 1. Popular videos will have more traffic than other videos. We will need to identify a popular video and partition data accordingly.
+2. To load the videos of a user all the servers will need to be queried.
+
+Solution
+We can store popular videos metadata in a cache to further optimise the performance.
 
 ##### Credits :  
 1. [educative.io: Designing Youtube or Netflix](https://www.educative.io/courses/grokking-the-system-design-interview/xV26VjZ7yMl)
