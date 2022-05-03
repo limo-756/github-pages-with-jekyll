@@ -11,17 +11,22 @@ date: 2022-04-29
 4. Performs action(s) on matched lines 
 
 #### Useful Concepts
-1. 'actionsToPerform' - Anything that comes in single quotes is an action, all the actions should be listed in singlw unit separated by spaces. <br> Eg: ls -l \| awk '{print $9}' \| awk -F "_" '/^java/ {print{$4}}'
-2. '{print $0}' - Print action is to print a column in a text. <br> $0 - complete line  $i - ith column (where i is an integer)  $NF - last column
-3. -F ":" - You can specify a field seperator this way. Default field separator is space. <br> Eg: ps \| awk -F "." 'print{$1}'
-4. FilePath - File path can be included after action. <br> Eg: awk '{print $1 $2 $3}' filePath
-5. uniq - It filter put the duplicate lines. <br> Eg. ls -l \| awk '{print$9}' \| awk -F "_" '/^java/ {print $4"abc"}' \| uniq
-6. sort - To sort the output. <br> Eg: ls -l \| awk '{print$9}' \| sort
-7. Simple Arithmetic - We can do (+, *, -, \/) on integer columns. <br> Eg: df | awk '/\/dev\// {print $1 "\t" $3 + $4}'
-8. length() function - We can use conditions on length of line. <br> Eg: awk 'length($0) < 10' /etc/shells
-9. If condition - We can add if condition in the awk. <br> Eg: ps -ef \| awk '{if($NF == "-bash") print $0}'
-10. For loop - We can add for loop in awk. <br> Eg: awk 'BEGIN { for(i=1;i<10;i++) print "square of ", i, "is", i*i}'
-11. Put matching on ith column - <br> Eg: ls -l | awk '$9 ~ /^[j]/ {print $0}'
+1. 'actionsToPerform' <br> Anything that comes in single quotes is an action, all the actions should be listed in single unit separated by spaces. <br> Eg: ls -l \| awk '{print $9}' \| awk -F "_" '/^java/ {print{$4}}'
+2. '{print $0}' <br> Print action is to print a column in a text. <br> $0 - complete line  $i - ith column (where i is an integer)  $NF - last column
+3. -F ":" <br> You can specify a field seperator this way. Default field separator is space. <br> Eg: ps \| awk -F "." 'print{$1}'
+4. FilePath <br> File path can be included after action <br> Eg: awk '{print $1 $2 $3}' filePath
+5. uniq <br> It filter out the duplicate lines. <br> Eg. ls -l \| awk '{print$9}' \| awk -F "_" '/^java/ {print $4"abc"}' \| uniq
+6. sort <br> To sort the output. <br> Eg: ls -l \| awk '{print$9}' \| sort
+7. Simple Arithmetic <br> We can do (+, *, -, \/) on integer columns. <br> Eg: df \| awk '/\/dev\// {print $1 "\t" $3 + $4}'
+8. length() function <br> We can use conditions on length of line <br> Eg: awk 'length($0) < 10' /etc/shells
+9. If condition <br> We can add if condition in the awk <br> Eg: ps -ef \| awk '{if($NF == "-bash") print $0}'
+10. For loop <br> We can add for loop in awk <br> Eg: awk 'BEGIN { for(i=1;i<10;i++) print "square of ", i, "is", i*i}'
+11. Put matching on ith column <br> Eg: ls -l \| awk '$9 ~ /^[j]/ {print $0}'
+12. Match function <br> Match function is used to match something. <br> Eg: ls -l \| awk 'match($9, /p/) {print{0}}'
+13. Process only the number of lines <br> ls -l \| awk 'NR == 10, NR == 20 {print NR, $0}'
+14. Print number of lines in the file <br> ls -l \| awk 'END {print NR}'
+
+### SED Command (stream editor)
 
 ##### Credits :  
 1. [Geeksforgeeks: AWK command in Unix/Linux with examples](https://www.geeksforgeeks.org/awk-command-unixlinux-examples/)
@@ -29,3 +34,5 @@ date: 2022-04-29
 3. [how search log files and extract data](https://www.sentinelone.com/blog/how-search-log-files-extract-data/)
 4. [Youtube: Learning Awk Is Essential For Linux Users](https://www.youtube.com/watch?v=9YOZmI-zWok)
 5. [GNU: All Awk functions](https://www.gnu.org/software/gawk/manual/html_node/Functions.html)
+6. [Youtube: Learning Sed Is Beneficial For Linux Users](https://www.youtube.com/watch?v=EACe7aiGczw)
+
