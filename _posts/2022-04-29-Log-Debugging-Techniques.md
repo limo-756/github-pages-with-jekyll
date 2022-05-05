@@ -23,7 +23,7 @@ date: 2022-04-29
 10. For loop <br> We can add for loop in awk <br> Eg: awk 'BEGIN { for(i=1;i<10;i++) print "square of ", i, "is", i*i}'
 11. Put matching on ith column <br> Eg: ls -l \| awk '$9 ~ /^[j]/ {print $0}'
 12. Match function <br> Match function is used to match something. <br> Eg: ls -l \| awk 'match($9, /p/) {print{0}}'
-13. Process only the number of lines <br> ls -l \| awk 'NR == 10, NR == 20 {print NR, $0}'
+13. Process only the range of lines <br> ls -l \| awk 'NR == 10, NR == 20 {print NR, $0}' <br> awk 'NR < 16' .bashrc
 14. Print number of lines in the file <br> ls -l \| awk 'END {print NR}'
 
 ### SED Command (stream editor)
@@ -36,6 +36,11 @@ date: 2022-04-29
 1. basic structure of sed <br> sed 's/string_to_be_replaced/new_string/' <br> Eg: echo "The Emac file manager is dired" | sed 's/red/green' <br> This command will replace only 1 occurance of *red* with *green*
 2. /g <br> It tells the sed command to substitule all the occurances <br> Eg: echo "Jungles are green" | sed 's/[a,g]/A/g'
 3. -i flag <br> This command is used to read the file and edit it <br> Eg: sed 's/a/A/' filePath
+4. Trim trailing spaces <br> sed -i 's/ *$//' filename
+5. Remove trailing tabs <br> sed -i 's/[[:space:]]*$//' filename
+6. Remove empty lines <br> sed 's/^$/d' filename
+7. Convert lower case letters to upper case <br> sed -i 's/[a-z]/\U&/g' filename
+8. Convert upper case letters to lower case <br> sed -i 's/[A-Z]/\L&/g' filename
 
 ##### Credits :  
 1. [Geeksforgeeks: AWK command in Unix/Linux with examples](https://www.geeksforgeeks.org/awk-command-unixlinux-examples/)
