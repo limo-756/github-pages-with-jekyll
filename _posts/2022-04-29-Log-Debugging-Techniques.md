@@ -42,6 +42,20 @@ date: 2022-04-29
 7. Convert lower case letters to upper case <br> sed -i 's/[a-z]/\U&/g' filename
 8. Convert upper case letters to lower case <br> sed -i 's/[A-Z]/\L&/g' filename
 
+### WC command (word, line, character, and byte count)
+
+#### Uses
+1. wc <br> Displays number of lines, number of words and number of characters <br> eg: echo "I am feeing awesome" | wc
+2. wc -l <br> Displays number of lines
+3. wc -w <br> Displays number of words
+4. wc -c <br> Displays number of characters
+
+### HEAD (display first lines of a file)
+
+#### Uses
+1. head -n <br> displays specified number of lines from the file <br> Eg: head -10
+
+
 ##### Credits :  
 1. [Geeksforgeeks: AWK command in Unix/Linux with examples](https://www.geeksforgeeks.org/awk-command-unixlinux-examples/)
 2. [Man page: AWK](https://man7.org/linux/man-pages/man1/awk.1p.html)
