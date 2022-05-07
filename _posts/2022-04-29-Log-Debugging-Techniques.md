@@ -56,6 +56,7 @@ date: 2022-04-29
 1. head -n <br> displays specified number of lines from the file <br> Eg: head -10
 
 
+
 ##### Credits :  
 1. [Geeksforgeeks: AWK command in Unix/Linux with examples](https://www.geeksforgeeks.org/awk-command-unixlinux-examples/)
 2. [Man page: AWK](https://man7.org/linux/man-pages/man1/awk.1p.html)
@@ -63,4 +64,6 @@ date: 2022-04-29
 4. [Youtube: Learning Awk Is Essential For Linux Users](https://www.youtube.com/watch?v=9YOZmI-zWok)
 5. [GNU: All Awk functions](https://www.gnu.org/software/gawk/manual/html_node/Functions.html)
 6. [Youtube: Learning Sed Is Beneficial For Linux Users](https://www.youtube.com/watch?v=EACe7aiGczw)
+7. [Youtube: How to build a PromQL (Prometheus Query Language)](https://www.youtube.com/watch?v=hvACEDjHQZE)
+8. [Prometheus Official Doc](https://prometheus.io/docs/prometheus/latest/querying/basics/)
 
