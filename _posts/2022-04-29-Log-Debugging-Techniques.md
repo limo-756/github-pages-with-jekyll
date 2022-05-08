@@ -66,4 +66,5 @@ date: 2022-04-29
 6. [Youtube: Learning Sed Is Beneficial For Linux Users](https://www.youtube.com/watch?v=EACe7aiGczw)
 7. [Youtube: How to build a PromQL (Prometheus Query Language)](https://www.youtube.com/watch?v=hvACEDjHQZE)
 8. [Prometheus Official Doc](https://prometheus.io/docs/prometheus/latest/querying/basics/)
+9. [GrafanaCONline: Prometheus rate queries in Grafana](https://www.youtube.com/watch?v=09bR9kJczKM)
 
