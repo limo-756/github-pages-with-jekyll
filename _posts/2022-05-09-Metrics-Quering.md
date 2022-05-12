@@ -38,6 +38,9 @@ curl 'http://localhost:9090/api/v1/query' \
 }
 ```
 
+### What is the difference between Instant vector and Range vector?
+only difference between instant vector and range vector is that range vector is constructed from the instant vector by adding a lookbehind window in square brackets. For example, http_requests_total is an instant vector, while http_requests_total[30s] is a range vector.
+
 ### Why do we need Range vectors?
 http_requests_total is a counter and gives the total number of request till that timestamp. But, we usually interested only in the increase of requests in certain duration. Lets say we want to find the increase in count in last 15 min. Then, we take the instant vector http_requests_total and append a range 15 m to it, which transform the instant vector to range vector. Then we apply an increase method that subtracts the count from last duration from start of the duration. The result is the instant vector which can be charted and further processed.
 
