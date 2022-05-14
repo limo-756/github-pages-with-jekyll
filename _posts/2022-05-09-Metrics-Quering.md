@@ -44,6 +44,13 @@ only difference between instant vector and range vector is that range vector is 
 ### Why do we need Range vectors?
 http_requests_total is a counter and gives the total number of request till that timestamp. But, we usually interested only in the increase of requests in certain duration. Lets say we want to find the increase in count in last 15 min. Then, we take the instant vector http_requests_total and append a range 15 m to it, which transform the instant vector to range vector. Then we apply an increase method that subtracts the count from last duration from start of the duration. The result is the instant vector which can be charted and further processed.
 
+### Important concepts
+1. Filtering based on labels <br> We can add labels in {} braces <br> eg: http_requests_total{job="prometheus",group="canary"} <br> We can use different matching operations for labels <br> a. = : exatcly matches the label value <br> b. != : Select labels that are not equal to the provided string <br> c. =~ : Select labels that regex-match the provided string. <br> d. !~: Select labels that do not regex-match the provided string
+2.  
+
+### What is look behind window?
+
+
 ### What all metrics to record?
 
 ##### Credits :  
