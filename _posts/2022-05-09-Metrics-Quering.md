@@ -38,6 +38,12 @@ curl 'http://localhost:9090/api/v1/query' \
 }
 ```
 
+### Offset Modifier
+Offset modifier help us to chnage the base timestamp for evaluation. <br> eg: sum(http_requests_total{code="200"} offset 15m)
+
+### @ modifier
+@ modifier is also used to change the base timestamp for evaluation. The only difference is that instead of duration it uses unix timestamp. <br>  eg: sum(http_requests_total{code="200"} @ 1609746000)
+
 ### What is the difference between Instant vector and Range vector?
 only difference between instant vector and range vector is that range vector is constructed from the instant vector by adding a lookbehind window in square brackets. For example, http_requests_total is an instant vector, while http_requests_total[30s] is a range vector.
 
