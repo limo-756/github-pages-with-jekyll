@@ -54,6 +54,8 @@ http_requests_total is a counter and gives the total number of request till that
 1. Filtering based on labels <br> We can add labels in {} braces <br> eg: http_requests_total{job="prometheus",group="canary"} <br> We can use different matching operations for labels <br> a. = : exatcly matches the label value <br> b. != : Select labels that are not equal to the provided string <br> c. =~ : Select labels that regex-match the provided string. <br> d. !~: Select labels that do not regex-match the provided string
 2. Getting all the labels of a metric <br> In Grafana type the metric name and all the lables with their values will be listed at the bottom.
 
+### Binary operators in Prometheus
+
 ### What is look behind window?
 
 
