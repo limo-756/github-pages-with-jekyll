@@ -55,11 +55,25 @@ http_requests_total is a counter and gives the total number of request till that
 2. Getting all the labels of a metric <br> In Grafana type the metric name and all the lables with their values will be listed at the bottom.
 
 ### Binary operators in Prometheus
+Supported Arithmetic operators - ^ (exponent), *, /, %, +. -. ==, !=, <=, <, >=, >
+
+#### Logical/set binary operators 
+These operators are defined only between instant vectors. We have following binary operators
+1. and (intersection) : vector1 and vector2 results in a vector with 
+2. or (union)
+2. unless (complement)
+
 
 ### What is look behind window?
 
 
 ### What all metrics to record?
+
+
+Questions
+1. How can we configure metric alerts so that we can know when to add new server, DB instance or any other computing resource to our fleet?
+2. What alerts in general to configure? Which failures?
+3. 
 
 ##### Credits :  
 1. [Youtube: How to build a PromQL (Prometheus Query Language)](https://www.youtube.com/watch?v=hvACEDjHQZE)
