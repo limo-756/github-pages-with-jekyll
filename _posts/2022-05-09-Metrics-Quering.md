@@ -59,9 +59,9 @@ Supported Arithmetic operators - ^ (exponent), *, /, %, +. -. ==, !=, <=, <, >=,
 
 #### Logical/set binary operators 
 These operators are defined only between instant vectors. We have following binary operators
-1. and (intersection) : <br> vector1 and vector2 </br> results in a vector with elements of vector1 that has matching elements with same labels in vector2. Other metric elements are dropped. Metric elements and names are carried from left-hand side metric
-2. or (union) : <br> vector1 or vector2 </br> results in vector with all the original elements from vector1 with all the lables, from vector2 elements with labels are taken that are not present in vector1.
-3. unless (complement) : <br> vector1 unless vector2 </br> results in a vector with all the elements of vector1 that has no elements in vector2 with same labels. All the matching elements in both the vectors are dropped.
+1. and (intersection) : <b> vector1 and vector2 </b> results in a vector with elements of vector1 that has matching elements with same labels in vector2. Other metric elements are dropped. Metric elements and names are carried from left-hand side metric
+2. or (union) : <b> vector1 or vector2 </b> results in vector with all the original elements from vector1 with all the lables, from vector2 elements with labels are taken that are not present in vector1.
+3. unless (complement) : <b> vector1 unless vector2 </b> results in a vector with all the elements of vector1 that has no elements in vector2 with same labels. All the matching elements in both the vectors are dropped.
 
 #### Vector Matching
 
