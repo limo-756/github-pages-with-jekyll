@@ -64,6 +64,16 @@ These operators are defined only between instant vectors. We have following bina
 3. unless (complement) : <b> vector1 unless vector2 </b> results in a vector with all the elements of vector1 that has no elements in vector2 with same labels. All the matching elements in both the vectors are dropped.
 
 #### Vector Matching
+##### One-to-one vector matching
+In this matching unique pair of elements are matched from left hand side and right hand side which has same set of labels and corresponding value.
+
+##### Ignoring keyword
+ignoring keyword allow us to discard labels in matching vectors. <br>
+Eg: method_code:http_errors:rate5m{code="500"} / ignoring(code) method:http_requests:rate5m
+
+##### on keyword
+on keyword allow us to limit the number of labels matched in matching vectors. <br>
+Eg: method_code:http_errors:rate5m{code="500"} / on(method) method:http_requests:rate5m
 
 
 ### What is look behind window?
