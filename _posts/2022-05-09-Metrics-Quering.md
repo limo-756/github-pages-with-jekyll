@@ -75,13 +75,26 @@ Eg: method_code:http_errors:rate5m{code="500"} / ignoring(code) method:http_requ
 on keyword allow us to limit the number of labels matched in matching vectors. <br>
 Eg: method_code:http_errors:rate5m{code="500"} / on(method) method:http_requests:rate5m
 
-#### group_left keyword
+##### group_left keyword
 group_left does Many-to-one matching. Meaning multiple elements from left vector matches single element in right vector. <br>
-Eg: method_code:http_errors:rate5m / ignoring(code) group_left method:http_requests:rate5m <br>
 
 ```
+Syntax:
 <vector expr> <bin-op> ignoring(<label list>) group_left(<label list>) <vector expr>
 <vector expr> <bin-op> on(<label list>) group_left(<label list>) <vector expr>
+
+Eg: method_code:http_errors:rate5m / ignoring(code) group_left method:http_requests:rate5m
+```
+
+##### group_right keyword
+group_right does one-to-Many matching. Meaning multiple elements from right vector matches single element on the left vector <br>
+
+```
+Syntax:
+<vector expr> <bin-op> ignoring(<label list>) group_right(<label list>) <vector expr>
+<vector expr> <bin-op> on(<label list>) group_right(<label list>) <vector expr>
+
+Eg: method_code:http_errors:rate5m / ignoring(code) group_left method:http_requests:rate5m
 ```
 
 ### What is look behind window?
