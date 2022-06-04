@@ -93,8 +93,33 @@ group_right does one-to-Many matching. Meaning multiple elements from right vect
 Syntax:
 <vector expr> <bin-op> ignoring(<label list>) group_right(<label list>) <vector expr>
 <vector expr> <bin-op> on(<label list>) group_right(<label list>) <vector expr>
+```
 
-Eg: method_code:http_errors:rate5m / ignoring(code) group_left method:http_requests:rate5m
+### Aggregations functions
+Aggregation functions can be used only on instant vectors. They can be used for particular dimensions <br>
+We can use following aggregation functions <br>
+1. sum (calculate sum over dimensions)
+2. min (select minimum over dimensions)
+3. max (select maximum over dimensions)
+4. avg (calculate the average over dimensions)
+5. group (all values in the resulting vector are 1)
+6. stddev (calculate population standard deviation over dimensions)
+7. stdvar (calculate population standard variance over dimensions)
+8. count (count number of elements in the vector)
+9. count_values (count number of elements with the same value)
+10. bottomk (smallest k elements by sample value)
+11. topk (largest k elements by sample value)
+12. quantile (calculate φ-quantile (0 ≤ φ ≤ 1) over dimensions)
+
+**Note** parameter is only required for count_values, quantile, topk and bottomk. <br>
+
+#### by and without clause
+We can either aggregate over all the label dimensions or we can preserve the distinct dimensions using **by** and **without** keywords. Without removes the listed lables from the resulting vectors. By does the opposite, it drops the lables not listed in the list from the resulting vector.
+
+```
+<aggr-op> [without|by (<label list>)] ([parameter,] <vector expression>)
+Or
+<aggr-op>([parameter,] <vector expression>) [without|by (<label list>)]
 ```
 
 ### What is look behind window?
@@ -115,3 +140,4 @@ Questions
 4. [Blog: Understanding Prometheus Range Vectors](https://satyanash.net/software/2021/01/04/understanding-prometheus-range-vectors.html)
 5. [Stackoverflow: Prometheus instant vector vs range vector](https://stackoverflow.com/questions/68223824/prometheus-instant-vector-vs-range-vector)
 6. [Grafana Docs: Prometheus data source](https://grafana.com/docs/grafana/latest/datasources/prometheus/#query-variable)
+7. [Youtube: Aggregation Operators](https://www.youtube.com/watch?v=aTH7OTH5-Mc)
