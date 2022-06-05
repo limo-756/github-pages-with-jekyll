@@ -122,6 +122,9 @@ Or
 <aggr-op>([parameter,] <vector expression>) [without|by (<label list>)]
 ```
 
+### Functions
+1. abs(): returns the instance vector with all the values converted to absolute value.
+
 ### What is look behind window?
 
 
