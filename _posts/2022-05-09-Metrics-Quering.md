@@ -124,6 +124,11 @@ Or
 
 ### Functions
 1. abs(): returns the instance vector with all the values converted to absolute value.
+2. absent(): Just like java isEmpty() this function tests the instant vector if it is empty. This function can be used in alerting to know if the time series is empty. <br>
+Eg: absent(nonexistent{job="myjob"})
+4. absent_over_time(): Same as above function, this function takes a range vector and check if it is empty for a period of time. <br>
+Eg: absent_over_time(nonexistent{job="myjob"}[1h])
+5. 
 
 ### What is look behind window?
 
