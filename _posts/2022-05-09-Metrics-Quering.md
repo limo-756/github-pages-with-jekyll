@@ -124,11 +124,15 @@ Or
 
 ### Functions
 1. abs(): returns the instance vector with all the values converted to absolute value.
-2. absent(): Just like java isEmpty() this function tests the instant vector if it is empty. This function can be used in alerting to know if the time series is empty. <br>
+2. ceil(): returns the instance vector with all the values converted to nearest higher integer.
+3. absent(): Just like java isEmpty() this function tests the instant vector if it is empty. This function can be used in alerting to know if the time series is empty. <br>
 Eg: absent(nonexistent{job="myjob"})
 4. absent_over_time(): Same as above function, this function takes a range vector and check if it is empty for a period of time. <br>
 Eg: absent_over_time(nonexistent{job="myjob"}[1h])
-5. 
+5. changes(): returns the number of times vector values has changed within the provided time range as an instant vector.
+6. clamp(v instant-vector, min scalar, max scalar): filters all the values that are within the min and max.
+7. clamp_max(v instant-vector, max scalar): filters all the values of vector to have upper limit of max.
+8. clamp_min(v instant-vector, min scalar): filters all the values of vector to have lower limit of min.
 
 ### What is look behind window?
 
