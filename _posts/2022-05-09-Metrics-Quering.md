@@ -133,6 +133,7 @@ Eg: absent_over_time(nonexistent{job="myjob"}[1h])
 6. clamp(v instant-vector, min scalar, max scalar): filters all the values that are within the min and max.
 7. clamp_max(v instant-vector, max scalar): filters all the values of vector to have upper limit of max.
 8. clamp_min(v instant-vector, min scalar): filters all the values of vector to have lower limit of min.
+9. day_of_month(v=vector(time()) instant-vector): Returns the day of 
 
 ### What is look behind window?
 
@@ -148,8 +149,10 @@ Questions
 ##### Credits :  
 1. [Youtube: How to build a PromQL (Prometheus Query Language)](https://www.youtube.com/watch?v=hvACEDjHQZE)
 2. [Prometheus Official Doc](https://prometheus.io/docs/prometheus/latest/querying/basics/)
-3. [GrafanaCONline: Prometheus rate queries in Grafana](https://www.youtube.com/watch?v=09bR9kJczKM)
-4. [Blog: Understanding Prometheus Range Vectors](https://satyanash.net/software/2021/01/04/understanding-prometheus-range-vectors.html)
-5. [Stackoverflow: Prometheus instant vector vs range vector](https://stackoverflow.com/questions/68223824/prometheus-instant-vector-vs-range-vector)
-6. [Grafana Docs: Prometheus data source](https://grafana.com/docs/grafana/latest/datasources/prometheus/#query-variable)
-7. [Youtube: Aggregation Operators](https://www.youtube.com/watch?v=aTH7OTH5-Mc)
+3. [Grafana: official Videos](https://www.youtube.com/watch?v=_nZSrY784sY)
+4. [Youtuve: PromQL Tutorial - Prometheus and Thanos Observability](https://www.youtube.com/watch?v=t6jZUR-xYVM)
+5. [GrafanaCONline: Prometheus rate queries in Grafana](https://www.youtube.com/watch?v=09bR9kJczKM)
+6. [Blog: Understanding Prometheus Range Vectors](https://satyanash.net/software/2021/01/04/understanding-prometheus-range-vectors.html)
+7. [Stackoverflow: Prometheus instant vector vs range vector](https://stackoverflow.com/questions/68223824/prometheus-instant-vector-vs-range-vector)
+8. [Grafana Docs: Prometheus data source](https://grafana.com/docs/grafana/latest/datasources/prometheus/#query-variable)
+9. [Youtube: Aggregation Operators](https://www.youtube.com/watch?v=aTH7OTH5-Mc)
