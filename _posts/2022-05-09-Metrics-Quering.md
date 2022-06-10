@@ -133,7 +133,11 @@ Eg: absent_over_time(nonexistent{job="myjob"}[1h])
 6. clamp(v instant-vector, min scalar, max scalar): filters all the values that are within the min and max.
 7. clamp_max(v instant-vector, max scalar): filters all the values of vector to have upper limit of max.
 8. clamp_min(v instant-vector, min scalar): filters all the values of vector to have lower limit of min.
-9. day_of_month(v=vector(time()) instant-vector): Returns the day of 
+9. day_of_month(v=vector(time()) instant-vector): Returns the day of the month for a given series in UTC (timestamp-timestamp series). Returned values are from 1 to 31.
+10. day_of_week(v=vector(time()) instant-vector): Same as above, Returned values are from 0 to 6, where 0 means Sunday etc.
+11. day_of_year(v=vector(time()) instant-vector): Same as above, Returned values are from 1 to 365 for non-leap years, and 1 to 366 in leap years.
+12. days_in_month(v=vector(time()) instant-vector): returns number of days in the month for each of the given times in UTC. Returned values are from 28 to 31.
+13. 
 
 ### What is look behind window?
 
