@@ -123,13 +123,14 @@ Or
 ```
 
 ### Functions
-1. abs(): returns the instance vector with all the values converted to absolute value.
-2. ceil(): returns the instance vector with all the values converted to nearest higher integer.
-3. absent(): Just like java isEmpty() this function tests the instant vector if it is empty. This function can be used in alerting to know if the time series is empty. <br>
+1. abs(v instant-vector): returns the instance vector with all the values converted to absolute value.
+2. ceil(v instant-vector): returns the instance vector with all the values converted to nearest higher integer.
+3. floor(v instant-vector): returns the instance vector with all the values converted to nearest lower integer.
+4. absent(v instant-vector): Just like java isEmpty() this function tests the instant vector if it is empty. This function can be used in alerting to know if the time series is empty. <br>
 Eg: absent(nonexistent{job="myjob"})
-4. absent_over_time(): Same as above function, this function takes a range vector and check if it is empty for a period of time. <br>
+4. absent_over_time(v range-vector): Same as above function, this function takes a range vector and check if it is empty for a period of time. <br>
 Eg: absent_over_time(nonexistent{job="myjob"}[1h])
-5. changes(): returns the number of times vector values has changed within the provided time range as an instant vector.
+5. changes(v range-vector): returns the number of times vector values has changed within the provided time range as an instant vector.
 6. clamp(v instant-vector, min scalar, max scalar): filters all the values that are within the min and max.
 7. clamp_max(v instant-vector, max scalar): filters all the values of vector to have upper limit of max.
 8. clamp_min(v instant-vector, min scalar): filters all the values of vector to have lower limit of min.
@@ -137,7 +138,10 @@ Eg: absent_over_time(nonexistent{job="myjob"}[1h])
 10. day_of_week(v=vector(time()) instant-vector): Same as above, Returned values are from 0 to 6, where 0 means Sunday etc.
 11. day_of_year(v=vector(time()) instant-vector): Same as above, Returned values are from 1 to 365 for non-leap years, and 1 to 366 in leap years.
 12. days_in_month(v=vector(time()) instant-vector): returns number of days in the month for each of the given times in UTC. Returned values are from 28 to 31.
-13. 
+13. delta(v range-vector): Calculates the difference between first and last value of each time series element in a range vector v, returning an instant vector of all the deltas with lables. Prometheus extrapolates the values to cover the full time range mentioned in the range vector selector, hence we can get decimal points even when the time series is of integer elements  
+14. deriv(v range-vector): Calculates the per secound derivate of range vector v, using simple linear regression. It should only be used for guages.
+15. exp(v instant-vector): Calculates exponential function for all the elements in the vector v.
+16. 
 
 ### What is look behind window?
 
