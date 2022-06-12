@@ -141,7 +141,15 @@ Eg: absent_over_time(nonexistent{job="myjob"}[1h])
 13. delta(v range-vector): Calculates the difference between first and last value of each time series element in a range vector v, returning an instant vector of all the deltas with lables. Prometheus extrapolates the values to cover the full time range mentioned in the range vector selector, hence we can get decimal points even when the time series is of integer elements  
 14. deriv(v range-vector): Calculates the per secound derivate of range vector v, using simple linear regression. It should only be used for guages.
 15. exp(v instant-vector): Calculates exponential function for all the elements in the vector v.
-16. 
+16. histogram_quantile(φ scalar, b instant-vector): <br>
+<details>
+    <summary>How many responses larger than 4kb were served on 12th June 2022 between 14:00 UTC to 14:15 UTC?</summary>
+    <p>To be added</p>
+</details>
+<details>
+    <summary>What percentage of requests in last hour got a response of 100ms or less?</summary>
+    <p>To be added</p>
+</details>
 
 ### What is look behind window?
 
@@ -164,3 +172,4 @@ Questions
 7. [Stackoverflow: Prometheus instant vector vs range vector](https://stackoverflow.com/questions/68223824/prometheus-instant-vector-vs-range-vector)
 8. [Grafana Docs: Prometheus data source](https://grafana.com/docs/grafana/latest/datasources/prometheus/#query-variable)
 9. [Youtube: Aggregation Operators](https://www.youtube.com/watch?v=aTH7OTH5-Mc)
+10. [Youtube: Better Histograms for Prometheus - Björn Rabenstein, Grafana Labs](https://www.youtube.com/watch?v=HG7uzON-IDM)
