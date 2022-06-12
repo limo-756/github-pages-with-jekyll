@@ -82,7 +82,7 @@ video_id, title, file_path, thumbnails_path, video_stats_id, uploader_id, catego
   Keys -> PK (comment_id), (video_id, parent_id, likes), (video_id, parent_id, modified_at)  
   
 ### Detailed Component Design
-[Detailed Component Design](../../../assets/posts/YoutubeHighLevelDesign.png "Detailed Component Design")
+![Detailed Component Design](../../../assets/posts/YoutubeHighLevelDesign.png "Detailed Component Design")
   
 
 ### Metadata Sharding
