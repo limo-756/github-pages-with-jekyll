@@ -148,10 +148,15 @@ Eg: absent_over_time(nonexistent{job="myjob"}[1h])
 </details>
 <details>
     <summary>What percentage of requests in last hour got a response of 100ms or less?</summary>
-    <p>To be added</p>
+    <p>histogram_quantile(0.99, sum(rate(http_delay_in_ms[5m])) by (1e))</p>
 </details>
 
-Busy Busy 
+<details>
+  <summary> <h4> What is 99th Percentile response time? </h4> </summary>
+  <p>It is the </p>
+</details>
+
+
 ### What is look behind window?
 
 
