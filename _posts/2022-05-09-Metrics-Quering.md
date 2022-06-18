@@ -153,9 +153,18 @@ Eg: absent_over_time(nonexistent{job="myjob"}[1h])
 
 <details>
   <summary> <h4> What is 99th Percentile response time? </h4> </summary>
-  <p>It is the </p>
+  <p>It is the measure of the maximum latency for the fastest 99% requests. For eg: if the 99th percentile is 2 sec then it means application executed 99% of requests in less than 2 sec. </p>
 </details>
 
+<details>
+  <summary> <h4> What is 50th Percentile response time? </h4> </summary>
+  <p>It is the measure of the maximum latency for the fastest 50% requests. For eg: if the 50th percentile is 2 sec then it means application executed 50% of requests in less than 2 sec. </p>
+</details>
+
+<details>
+  <summary> <h4> How 99 percentile or 50 percentile better than mean/average or median? </h4> </summary>
+  <p> Mean and median are not a very good metric to show outliers. For eg: if at 9 AM for a short duration traffic goes up, then 99th & 50th percentile will be very high. But, mean and median will be pretty low </p>
+</details>
 
 ### What is look behind window?
 
@@ -179,3 +188,4 @@ Questions
 8. [Grafana Docs: Prometheus data source](https://grafana.com/docs/grafana/latest/datasources/prometheus/#query-variable)
 9. [Youtube: Aggregation Operators](https://www.youtube.com/watch?v=aTH7OTH5-Mc)
 10. [Youtube: Better Histograms for Prometheus - Björn Rabenstein, Grafana Labs](https://www.youtube.com/watch?v=HG7uzON-IDM)
+11. [Goolge cloud Engineering Docs: Latency metrics](https://cloud.google.com/spanner/docs/latency)
