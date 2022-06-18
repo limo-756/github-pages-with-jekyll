@@ -37,3 +37,7 @@ Here are a few photos from a trip to Udaipur I took last year
 - ![Udaipur Palace back view](assets/palace-second-view.jpeg "Udaipur Palace back view")
 - ![Udaipur Lake](assets/lake.jpeg "Udaipur Lake")
 - ![Random Photo](assets/random.jpeg "Random Photo")
+
+## My Reading Todo List
+
+- JVM warm-up and code-optimization paths. Resources [1](https://www.baeldung.com/java-microbenchmark-harness)
