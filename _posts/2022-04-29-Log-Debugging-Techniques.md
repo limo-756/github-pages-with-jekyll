@@ -12,7 +12,7 @@ date: 2022-04-29
 
 #### Useful Concepts and Operations
 1. 'actionsToPerform' <br> Anything that comes in single quotes is an action, all the actions should be listed in single unit separated by spaces. <br> Eg: ls -l \| awk '{print $9}' \| awk -F "_" '/^java/ {print{$4}}'
-2. '{print $0}' <br> Print action is to print a column in a text. <br> $0 - complete line  $i - ith column (where i is an integer)  $NF - last column
+2. '{print $0}' <br> Print action is to print a column in a text. <br> $0 - complete line <br> $i - ith column (where i is an integer) <br> $NF - last column
 3. -F ":" <br> You can specify a field seperator this way. Default field separator is space. <br> Eg: ps \| awk -F "." 'print{$1}'
 4. FilePath <br> File path can be included after action <br> Eg: awk '{print $1 $2 $3}' filePath
 5. uniq <br> It filter out the duplicate lines. <br> Eg. ls -l \| awk '{print$9}' \| awk -F "_" '/^java/ {print $4"abc"}' \| uniq
@@ -26,6 +26,10 @@ date: 2022-04-29
 13. Process only the range of lines <br> ls -l \| awk 'NR == 10, NR == 20 {print NR, $0}' <br> awk 'NR < 16' .bashrc
 14. Print number of lines in the file <br> ls -l \| awk 'END {print NR}'
 
+### grep command
+#### Useful Concepts and Operations
+1. <details> <summary> How to grep using result of previous grep <br> Grep the status codes for ids with xyz occured event <br> Eg  ``` ID 1000 xyz occured ID 1001 misc content ID 1000 misc content ID 1000 status code: 26348931276572174 ID 1000 misc content ID 1001 misc content ID 1001 xyz occured ID 1001 status code: 122312321 ID 1002 xyz occured ID 1002 status code: 974783 ``` <br> Result should be ``` ID 1000 status code: 26348931276572174 ID 1001 status code: 122312321 ID 1002 status code: 974783 ``` </summary> <p> for x in `grep 'xyz occured' xyz.txt | awk '{print $2}'`; do grep "$x status code" xyz.txt; done [Reference1](https://stackoverflow.com/a/18179401/6744037) </p> </details>
+
 ### SED Command (stream editor)
 
 #### Uses
@@ -33,8 +37,8 @@ date: 2022-04-29
 2. It supports find-replace, delete operations
 
 #### Useful Concepts and Operations
-1. basic structure of sed <br> sed 's/string_to_be_replaced/new_string/' <br> Eg: echo "The Emac file manager is dired" | sed 's/red/green' <br> This command will replace only 1 occurance of *red* with *green*
-2. /g <br> It tells the sed command to substitule all the occurances <br> Eg: echo "Jungles are green" | sed 's/[a,g]/A/g'
+1. basic structure of sed <br> sed 's/string_to_be_replaced/new_string/' <br> Eg: echo "The Emac file manager is dired" \| sed 's/red/green' <br> This command will replace only 1 occurance of *red* with *green*
+2. /g <br> It tells the sed command to substitule all the occurances <br> Eg: echo "Jungles are green" \| sed 's/[a,g]/A/g'
 3. -i flag <br> This command is used to read the file and edit it <br> Eg: sed 's/a/A/' filePath
 4. Trim trailing spaces <br> sed -i 's/ *$//' filename
 5. Remove trailing tabs <br> sed -i 's/[[:space:]]*$//' filename
