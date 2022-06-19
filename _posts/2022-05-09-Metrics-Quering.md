@@ -189,3 +189,4 @@ Questions
 9. [Youtube: Aggregation Operators](https://www.youtube.com/watch?v=aTH7OTH5-Mc)
 10. [Youtube: Better Histograms for Prometheus - Björn Rabenstein, Grafana Labs](https://www.youtube.com/watch?v=HG7uzON-IDM)
 11. [Goolge cloud Engineering Docs: Latency metrics](https://cloud.google.com/spanner/docs/latency)
+12. [Why Percentiles Don’t Work the Way You Think](https://orangematter.solarwinds.com/2016/11/18/why-percentiles-dont-work-the-way-you-think/)
