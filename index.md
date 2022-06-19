@@ -41,3 +41,5 @@ Here are a few photos from a trip to Udaipur I took last year
 ## My Reading Todo List
 
 - JVM warm-up and code-optimization paths. Resources [1](https://www.baeldung.com/java-microbenchmark-harness)
+- SQL design best practices [1](https://cloud.google.com/spanner/docs/schema-design) [2](https://cloud.google.com/spanner/docs/introspection/query-statistics)
+- SQL query execution planner [1](https://cloud.google.com/spanner/docs/sql-best-practices)
