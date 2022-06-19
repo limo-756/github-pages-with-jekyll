@@ -68,7 +68,7 @@ ID 1002 status code: 974783
 ### WC command (word, line, character, and byte count)
 
 #### Uses
-1. wc <br> Displays number of lines, number of words and number of characters <br> eg: echo "I am feeing awesome" | wc
+1. wc <br> Displays number of lines, number of words and number of characters <br> eg: echo "I am feeing awesome" \| wc
 2. wc -l <br> Displays number of lines
 3. wc -w <br> Displays number of words
 4. wc -c <br> Displays number of characters
