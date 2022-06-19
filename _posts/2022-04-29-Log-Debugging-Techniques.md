@@ -45,7 +45,7 @@ ID 1002 status code: 974783
 ID 1000 status code: 26348931276572174 
 ID 1001 status code: 122312321 
 ID 1002 status code: 974783 
-</code></pre> </summary> <p> for x in `grep 'xyz occured' xyz.txt | awk '{print $2}'`; do grep "$x status code" xyz.txt; done <a href="https://stackoverflow.com/a/18179401/6744037">Reference</a> </p> </details>
+</code></pre> </summary> <p> for x in `grep 'xyz occured' xyz.txt | awk '{print $2}'`; do grep "$x status code" xyz.txt; done <br> <a href="https://stackoverflow.com/a/18179401/6744037">Reference</a> </p> </details>
 </li>
 </ol>
 
