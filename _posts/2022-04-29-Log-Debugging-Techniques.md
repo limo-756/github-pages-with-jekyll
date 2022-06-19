@@ -41,11 +41,11 @@ ID 1001 status code: 122312321
 ID 1002 xyz occured 
 ID 1002 status code: 974783
  </code></pre> <br> Result should be 
-<samp> 
+<pre><code> 
 ID 1000 status code: 26348931276572174 
 ID 1001 status code: 122312321 
 ID 1002 status code: 974783 
-</samp> </summary> <p> for x in `grep 'xyz occured' xyz.txt | awk '{print $2}'`; do grep "$x status code" xyz.txt; done [Reference1](https://stackoverflow.com/a/18179401/6744037) </p> </details>
+</code></pre> </summary> <p> for x in `grep 'xyz occured' xyz.txt | awk '{print $2}'`; do grep "$x status code" xyz.txt; done <a href="https://stackoverflow.com/a/18179401/6744037">Reference</a> </p> </details>
 </li>
 </ol>
 
