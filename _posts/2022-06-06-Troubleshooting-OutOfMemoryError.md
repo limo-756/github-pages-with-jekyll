@@ -17,6 +17,11 @@ date: 2022-06-06
   </p>
 </details>
 
+<details> 
+  <summary> <h4> Java command to capture heap dump automatically in application? </summary>
+  <p> -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/opt/tmp/heapdump.bin <br> <a href="https://blog.heaphero.io/2017/10/13/how-to-capture-java-heap-dumps-7-options/"> Reference </a> </p>
+</details>
+
 
 ##### Credits :  
 1. [Youtube: Troubleshooting OutOfMemoryError - Heap dump, Eclipse MAT](https://www.youtube.com/watch?v=SuguH8YBl5g)
