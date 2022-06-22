@@ -3,11 +3,16 @@ title: "Troubleshooting OutOfMemoryError"
 date: 2022-06-06
 ---
 
-### Difference between retained heap and shallow heap
-
-### How to automate heap dump automatically on java out of memory exception
-
-### Tips around heap size
+<details> 
+  <summary> <h4> Difference between retained heap and shallow heap </h4> </summary>
+  <p> <b> Shallow heap size </b> : It is the size of the object. 
+    <br> <b> Retained heap size </b> : It is the size of the object plus size of all the objects it references that will be garbage collected if object is garbage collected. <br>
+    <details>
+      <summary> What will be be the retained heap size of X and A in below diagram </summary>
+      <p> X - 10B and A - 40B </p>
+    </details>
+  </p>
+</details>
 
 <details>
   <summary> <h4> What is Xmx argument in Java? </h4> </summary>
