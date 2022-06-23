@@ -141,7 +141,9 @@ Eg: absent_over_time(nonexistent{job="myjob"}[1h])
 13. delta(v range-vector): Calculates the difference between first and last value of each time series element in a range vector v, returning an instant vector of all the deltas with lables. Prometheus extrapolates the values to cover the full time range mentioned in the range vector selector, hence we can get decimal points even when the time series is of integer elements  
 14. deriv(v range-vector): Calculates the per secound derivate of range vector v, using simple linear regression. It should only be used for guages.
 15. exp(v instant-vector): Calculates exponential function for all the elements in the vector v.
-16. histogram_quantile(φ scalar, b instant-vector): <br>
+16. histogram_quantile(φ scalar, b instant-vector): calculates the φ-quantile (0 ≤ φ ≤ 1) from the buckets b of a histogram.
+
+
 <details>
     <summary>How many responses larger than 4kb were served on 12th June 2022 between 14:00 UTC to 14:15 UTC?</summary>
     <p>To be added</p>
