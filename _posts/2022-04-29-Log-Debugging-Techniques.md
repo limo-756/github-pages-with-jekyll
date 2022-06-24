@@ -78,7 +78,12 @@ ID 1002 status code: 974783
 #### Uses
 1. head -n <br> displays specified number of lines from the file <br> Eg: head -10
 
+### CUT (Divide a file into several parts or columns)
 
+#### Uses
+<ol>
+ <li> cut -c <br> displays the characters provided in the list. <br> Eg: echo "You are best" | cut -c 5- <br> Output: are best </li>
+</ol>
 
 ##### Credits :  
 1. [Geeksforgeeks: AWK command in Unix/Linux with examples](https://www.geeksforgeeks.org/awk-command-unixlinux-examples/)
@@ -87,9 +92,4 @@ ID 1002 status code: 974783
 4. [Youtube: Learning Awk Is Essential For Linux Users](https://www.youtube.com/watch?v=9YOZmI-zWok)
 5. [GNU: All Awk functions](https://www.gnu.org/software/gawk/manual/html_node/Functions.html)
 6. [Youtube: Learning Sed Is Beneficial For Linux Users](https://www.youtube.com/watch?v=EACe7aiGczw)
-7. [Youtube: How to build a PromQL (Prometheus Query Language)](https://www.youtube.com/watch?v=hvACEDjHQZE)
-8. [Prometheus Official Doc](https://prometheus.io/docs/prometheus/latest/querying/basics/)
-9. [GrafanaCONline: Prometheus rate queries in Grafana](https://www.youtube.com/watch?v=09bR9kJczKM)
-10. [Blog: Understanding Prometheus Range Vectors](https://satyanash.net/software/2021/01/04/understanding-prometheus-range-vectors.html)
-11. [Stackoverflow: Prometheus instant vector vs range vector](https://stackoverflow.com/questions/68223824/prometheus-instant-vector-vs-range-vector)
-
+7. [Cut command documentation](https://ss64.com/bash/cut.html)
