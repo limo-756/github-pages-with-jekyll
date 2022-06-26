@@ -14,25 +14,25 @@ date: 2022-04-29
 
 #### Useful Concepts and Operations
 
-1. 'actionsToPerform' <br> Anything that comes in single quotes is an action, all the actions should be listed in single
-   unit separated by spaces. <br> Eg: ls -l \| awk '{print $9}' \| awk -F "_" '/^java/ {print{$4}}'
-2. '{print $0}' <br> Print action is to print a column in a text. <br> $0 - complete line <br> $i - ith column (where i
+1. `'actionsToPerform'` </> <br> Anything that comes in single quotes is an action, all the actions should be listed in single
+   unit separated by spaces. <br> Eg: `ls -l | awk '{print $9}' | awk -F "_" '/^java/ {print{$4}}'`
+2. `'{print $0}'` <br> Print action is to print a column in a text. <br> $0 - complete line <br> $i - ith column (where i
    is an integer) <br> $NF - last column
-3. -F ":" <br> You can specify a field separator this way. Default field separator is space. <br> Eg: ps \| awk -F "." '
-   print{$1}'
-4. FilePath <br> File path can be included after action <br> Eg: awk '{print $1 $2 $3}' filePath
-5. uniq <br> It filter out the duplicate lines. <br> Eg. ls -l \| awk '{print$9}' \| awk -F "_" '/^java/ {print $4"abc"
-   }' \| uniq
-6. sort <br> To sort the output. <br> Eg: ls -l \| awk '{print$9}' \| sort
-7. Simple Arithmetic <br> We can do (+, *, -, \/) on integer columns. <br> Eg: df \| awk '/\/dev\// {print $1 "\t" $3 +
-   $4}'
-8. length() function <br> We can use conditions on length of line <br> Eg: awk 'length($0) < 10' /etc/shells
-9. If condition <br> We can add if condition in the awk <br> Eg: ps -ef \| awk '{if($NF == "-bash") print $0}'
-10. For loop <br> We can add for loop in awk <br> Eg: awk 'BEGIN { for(i=1;i<10;i++) print "square of ", i, "is", i*i}'
-11. Put matching on ith column <br> Eg: ls -l \| awk '$9 ~ /^[j]/ {print $0}'
-12. Match function <br> Match function is used to match something. <br> Eg: ls -l \| awk 'match($9, /p/) {print{0}}'
-13. Process only the range of lines <br> ls -l \| awk 'NR == 10, NR == 20 {print NR, $0}' <br> awk 'NR < 16' .bashrc
-14. Print number of lines in the file <br> ls -l \| awk 'END {print NR}'
+3. `-F ":"` <br> You can specify a field separator this way. Default field separator is space. <br> Eg: `ps | awk -F "." '
+   print{$1}'`
+4. FilePath <br> File path can be included after action <br> Eg: `awk '{print $1 $2 $3}' filePath`
+5. `uniq` <br> It filters out the duplicate lines. <br> Eg. `ls -l | awk '{print$9}' | awk -F "_" '/^java/ {print $4"abc"
+   }' | uniq`
+6. `sort` <br> To sort the output. <br> Eg: `ls -l | awk '{print$9}' | sort`
+7. Simple Arithmetic <br> We can do (+, *, -, \/) on integer columns. <br> Eg: `df | awk '/\/dev\// {print $1 "\t" $3 +
+   $4}'`
+8. `length()` function <br> We can use conditions on length of line <br> Eg: `awk 'length($0) < 10' /etc/shells`
+9. If condition <br> We can add if condition in the awk <br> Eg: `ps -ef | awk '{if($NF == "-bash") print $0}'`
+10. For loop <br> We can add for loop in awk <br> Eg: `awk 'BEGIN { for(i=1;i<10;i++) print "square of ", i, "is", i*i}'`
+11. Put matching on ith column <br> Eg: `ls -l | awk '$9 ~ /^[j]/ {print $0}'`
+12. Match function <br> Match function is used to match something. <br> Eg: `ls -l | awk 'match($9, /p/) {print{0}}'`
+13. Process only the range of lines <br> `ls -l | awk 'NR == 10, NR == 20 {print NR, $0}' <br> awk 'NR < 16' .bashrc`
+14. Print number of lines in the file <br> `ls -l | awk 'END {print NR}'`
 
 ### grep command
 
@@ -68,31 +68,31 @@ ID 1002 status code: 974783
 
 #### Useful Concepts and Operations
 
-1. basic structure of sed <br> sed 's/string_to_be_replaced/new_string/' <br> Eg: echo "The Emac file manager is dired"
-   \| sed 's/red/green' <br> This command will replace only 1 occurance of *red* with *green*
-2. /g <br> It tells the sed command to substitule all the occurances <br> Eg: echo "Jungles are green" \| sed 's/[a,g]
-   /A/g'
-3. -i flag <br> This command is used to read the file and edit it <br> Eg: sed 's/a/A/' filePath
-4. Trim trailing spaces <br> sed -i 's/ *$//' filename
-5. Remove trailing tabs <br> sed -i 's/[[:space:]]*$//' filename
-6. Remove empty lines <br> sed 's/^$/d' filename
-7. Convert lower case letters to upper case <br> sed -i 's/[a-z]/\U&/g' filename
-8. Convert upper case letters to lower case <br> sed -i 's/[A-Z]/\L&/g' filename
+1. basic structure of sed <br> `sed 's/string_to_be_replaced/new_string/'` <br> Eg: `echo "The Emac file manager is dired"
+   \| sed 's/red/green'` <br> This command will replace only 1 occurance of *red* with *green*
+2. `/g` <br> It tells the sed command to substitule all the occurances <br> Eg: `echo "Jungles are green" | sed 's/[a,g]
+   /A/g'`
+3. `-i` flag <br> This command is used to read the file and edit it <br> Eg: `sed -i 's/a/A/' filePath`
+4. Trim trailing spaces <br> `sed -i 's/ *$//' filename`
+5. Remove trailing tabs <br> `sed -i 's/[[:space:]]*$//' filename`
+6. Remove empty lines <br> `sed 's/^$/d' filename`
+7. Convert lower case letters to upper case <br> `sed -i 's/[a-z]/\U&/g' filename`
+8. Convert upper case letters to lower case <br> `sed -i 's/[A-Z]/\L&/g' filename`
 
 ### WC command (word, line, character, and byte count)
 
 #### Uses
 
-1. wc <br> Displays number of lines, number of words and number of characters <br> eg: echo "I am feeing awesome" \| wc
-2. wc -l <br> Displays number of lines
-3. wc -w <br> Displays number of words
-4. wc -c <br> Displays number of characters
+1. `wc` <br> Displays number of lines, number of words and number of characters <br> eg: `echo "I am feeing awesome" | wc`
+2. `wc -l` <br> Displays number of lines
+3. `wc -w` <br> Displays number of words
+4. `wc -c` <br> Displays number of characters
 
 ### HEAD (display first lines of a file)
 
 #### Uses
 
-1. head -n <br> displays specified number of lines from the file <br> Eg: head -10
+1. `head -n` <br> displays specified number of lines from the file <br> Eg: `head -10`
 
 ### CUT (Divide a file into several parts or columns)
 
