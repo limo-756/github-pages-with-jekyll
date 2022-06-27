@@ -127,9 +127,9 @@ Or
 2. ceil(v instant-vector): returns the instance vector with all the values converted to nearest higher integer.
 3. floor(v instant-vector): returns the instance vector with all the values converted to nearest lower integer.
 4. absent(v instant-vector): Just like java isEmpty() this function tests the instant vector if it is empty. This function can be used in alerting to know if the time series is empty. <br>
-Eg: absent(nonexistent{job="myjob"})
+Eg: `absent(nonexistent{job="myjob"})`
 4. absent_over_time(v range-vector): Same as above function, this function takes a range vector and check if it is empty for a period of time. <br>
-Eg: absent_over_time(nonexistent{job="myjob"}[1h])
+Eg: `absent_over_time(nonexistent{job="myjob"}[1h])`
 5. changes(v range-vector): returns the number of times vector values has changed within the provided time range as an instant vector.
 6. clamp(v instant-vector, min scalar, max scalar): filters all the values that are within the min and max.
 7. clamp_max(v instant-vector, max scalar): filters all the values of vector to have upper limit of max.
@@ -138,10 +138,14 @@ Eg: absent_over_time(nonexistent{job="myjob"}[1h])
 10. day_of_week(v=vector(time()) instant-vector): Same as above, Returned values are from 0 to 6, where 0 means Sunday etc.
 11. day_of_year(v=vector(time()) instant-vector): Same as above, Returned values are from 1 to 365 for non-leap years, and 1 to 366 in leap years.
 12. days_in_month(v=vector(time()) instant-vector): returns number of days in the month for each of the given times in UTC. Returned values are from 28 to 31.
-13. delta(v range-vector): Calculates the difference between first and last value of each time series element in a range vector v, returning an instant vector of all the deltas with lables. Prometheus extrapolates the values to cover the full time range mentioned in the range vector selector, hence we can get decimal points even when the time series is of integer elements  
-14. deriv(v range-vector): Calculates the per secound derivate of range vector v, using simple linear regression. It should only be used for guages.
-15. exp(v instant-vector): Calculates exponential function for all the elements in the vector v.
-16. histogram_quantile(φ scalar, b instant-vector): calculates the φ-quantile (0 ≤ φ ≤ 1) from the buckets b of a histogram.
+13. hour(v=vector(time()) instant-vector): returns the hour of the day for each of the given times in UTC. Returned values are from 0 to 23.
+14. delta(v range-vector): Calculates the difference between first and last value of each time series element in a range vector v, returning an instant vector of all the deltas with lables. Prometheus extrapolates the values to cover the full time range mentioned in the range vector selector, hence we can get decimal points even when the time series is of integer elements  
+15. deriv(v range-vector): Calculates the per second derivate of range vector v, using simple linear regression. It should only be used for guages.
+16. idelta(v range-vector): calculates the difference between the last two samples in the range vector v. This method should only be used with guages.
+17. exp(v instant-vector): Calculates exponential function for all the elements in the vector v.
+18. histogram_quantile(φ scalar, b instant-vector): calculates the φ-quantile (0 ≤ φ ≤ 1) from the buckets b of a histogram.
+19. holt_winters(v range-vector, sf scalar, tf scalar): This function smoothens the time series data by using the trends in the time series. Lower the smoothening factor (sf) more importance is given to real data points. Higher the trend factor (tf) the more trends in the data is considered. Both sf and tf must be between 0 and 1. **This function should only be used with guages**.
+20. rate(v range-vector): Calculates the average per second increase of time series in the range vector. This function extrapolates the values to account for server restarts, missed values and imperfect alignment of scrape cycles with the range's time period 
 
 
 <details>
