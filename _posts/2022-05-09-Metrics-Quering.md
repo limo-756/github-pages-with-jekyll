@@ -146,6 +146,7 @@ Eg: `absent_over_time(nonexistent{job="myjob"}[1h])`
 18. histogram_quantile(φ scalar, b instant-vector): calculates the φ-quantile (0 ≤ φ ≤ 1) from the buckets b of a histogram.
 19. holt_winters(v range-vector, sf scalar, tf scalar): This function smoothens the time series data by using the trends in the time series. Lower the smoothening factor (sf) more importance is given to real data points. Higher the trend factor (tf) the more trends in the data is considered. Both sf and tf must be between 0 and 1. **This function should only be used with guages**.
 20. rate(v range-vector): Calculates the average per second increase of time series in the range vector. This function extrapolates the values to account for server restarts, missed values and imperfect alignment of scrape cycles with the range's time period 
+21. increase(v range-vector): Calculates the increase in the time series in the range vector. It is same as rang method multiplied by window in seconds.
 
 
 <details>
