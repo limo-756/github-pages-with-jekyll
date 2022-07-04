@@ -3,6 +3,13 @@ title: "Troubleshooting OutOfMemoryError"
 date: 2022-06-06
 ---
 
+## Eclipse MAT Overview window
+
+### Details section
+It tells about size of the dump, number of classes loaded, number of objects alive and number of class loaders. <br>
+If the size of the heap dump file and size of the dump in details sections does not match then that means,
+that some objects are eligible for garbage collection and will be collected in next cycle.
+
 <details> 
   <summary> <h4> Difference between retained heap and shallow heap </h4> </summary>
   <p> <b> Shallow heap size </b> : It is the size of the object. 
