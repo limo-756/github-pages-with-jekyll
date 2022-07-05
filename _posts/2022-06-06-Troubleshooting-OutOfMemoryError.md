@@ -10,6 +10,14 @@ It tells about size of the dump, number of classes loaded, number of objects ali
 If the size of the heap dump file and size of the dump in details sections does not match then that means,
 that some objects are eligible for garbage collection and will be collected in next cycle.
 
+### Pie Chart Section
+It shows the distribution of retained heap memory by packages. By hovering over any of the slice see the details of the objects in the object inspector on the left. Click on any slice to drill down and follow for the outgoing references.
+
+### Histogram Tool Option
+This section shows the number of instances per class, shallow size and retained size.
+
+![MAT Overview Window](../../../assets/posts/Mat_Overview_window.png "MAT Overview Window Image")
+
 <details> 
   <summary> <h4> Difference between retained heap and shallow heap </h4> </summary>
   <p> <b> Shallow heap size </b> : It is the size of the object. 
@@ -35,3 +43,4 @@ that some objects are eligible for garbage collection and will be collected in n
 
 ##### Credits :  
 1. [Youtube: Troubleshooting OutOfMemoryError - Heap dump, Eclipse MAT](https://www.youtube.com/watch?v=SuguH8YBl5g)
+2. [Eclipse MAT official doc](https://help.eclipse.org/latest/index.jsp?topic=%2Forg.eclipse.mat.ui.help%2Fgettingstarted%2Fbasictutorial.html)
