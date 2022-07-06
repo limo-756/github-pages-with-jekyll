@@ -16,6 +16,14 @@ It shows the distribution of retained heap memory by packages. By hovering over 
 ### Histogram Tool Option
 This section shows the number of instances per class, shallow size and retained size.
 
+#### Context Menu
+We can list objects outgoing and incoming references <br>
+Show shortest path to GC roots (meaning the path from thread to selected object) <br>
+group by class loader, packages or superclass
+
+### Dominator Tree
+It lists the biggest objects in the heap dump. 
+
 ![MAT Overview Window](../../../assets/posts/Mat_Overview_window.png "MAT Overview Window Image")
 
 <details> 
@@ -36,7 +44,7 @@ This section shows the number of instances per class, shallow size and retained 
 </details>
 
 <details> 
-  <summary> <h4> Java command to capture heap dump automatically in application? </summary>
+  <summary> <h4> Java command to capture heap dump automatically in application? </h4> </summary>
   <p> -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/opt/tmp/heapdump.bin <br> <a href="https://blog.heaphero.io/2017/10/13/how-to-capture-java-heap-dumps-7-options/"> Reference </a> </p>
 </details>
 
