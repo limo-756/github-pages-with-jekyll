@@ -54,6 +54,6 @@ Dominator Tree has the following properties:
 </details>
 
 
-##### Credits :  
+##### References :  
 1. [Youtube: Troubleshooting OutOfMemoryError - Heap dump, Eclipse MAT](https://www.youtube.com/watch?v=SuguH8YBl5g)
 2. [Eclipse MAT official doc](https://help.eclipse.org/latest/index.jsp?topic=%2Forg.eclipse.mat.ui.help%2Fgettingstarted%2Fbasictutorial.html)
