@@ -14,4 +14,7 @@ Sometimes we want to add responsibilities to objects and not classes.
 ##### References :  
 1. Design Patterns Elements of Reusable Object-Oriented Software
 2. Head First Design Patterns
-3. [Wikipedia: Design Pattern List](https://en.wikipedia.org/wiki/Software_design_pattern)
+3. [Wikipedia: Decorator Pattern](https://en.wikipedia.org/wiki/Decorator_pattern)
+4. [Wikipedia: Design Pattern List](https://en.wikipedia.org/wiki/Software_design_pattern)
+5. [Refactoring Guru](https://refactoring.guru/design-patterns/decorator)
+6. [Baeldung: The Decorator Pattern in Java](https://www.baeldung.com/java-decorator-pattern)
