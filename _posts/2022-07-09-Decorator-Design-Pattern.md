@@ -14,7 +14,8 @@ When we want to extend the functionality at runtime using object composition, an
 4. Decorator can perform its action before or after it delegates the control to underlying component.
 5. An unlimited number of Decorator can be applied to a component.
 
-### Decorator Pattern Design
+### Decorator Pattern Structure
+![Decorator Pattern Structure](../../../assets/posts/DecoratorPatternDesign.jpeg "Decorator Pattern Structure Image")
 
 ##### References :  
 1. Design Patterns Elements of Reusable Object-Oriented Software
