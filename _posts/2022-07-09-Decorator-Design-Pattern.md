@@ -14,8 +14,19 @@ When we want to extend the functionality at runtime using object composition, an
 4. Decorator can perform its action before or after it delegates the control to underlying component.
 5. An unlimited number of Decorator can be applied to a component.
 
+## Applicability of Decorator Pattern
+1. It can be used where responsibility can be added dynamically and transparently by a caller.
+2. It can be used where responsibility can be withdrawn from an object (Possibly by creating a new object from existing object without certain decorators).
+3. It can be used where there are many variants possible and creating class for every variant will lead to class explosion.
+4. It can be used where a class is hidden and un-available for subclassing. (In C++ 3rd party libs, we don't have access to concrete classes only to their binaries).
+
 ### Decorator Pattern Structure
 ![Decorator Pattern Structure](../../../assets/posts/DecoratorPatternDesign.jpeg "Decorator Pattern Structure Image")
+
+1. Component: interface for components to which responsibility can be added dynamically.
+2. Concrete Component: objects to which additional responsibilities can be added
+3. Decorator: conforms to component interface and contain component object so that it can decorate the object with additional responsibilities
+4. Concrete Decorator: Adds responsibilities to components
 
 ##### References :  
 1. Design Patterns Elements of Reusable Object-Oriented Software
