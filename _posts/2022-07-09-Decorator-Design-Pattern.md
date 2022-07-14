@@ -28,6 +28,16 @@ When we want to extend the functionality at runtime using object composition, an
 3. Decorator: conforms to component interface and contain component object so that it can decorate the object with additional responsibilities
 4. Concrete Decorator: Adds responsibilities to components
 
+### Pros of Decorator
+1. 
+
+#### Questions
+1. How can we detach Decorator from a component at run-time?
+2. How can we restrict only 1 decorator per kind?
+3. How can we save the component-decorator relationship in DB? so that we can generate the same representation later.
+4. Can we use Decorator pattern where decorator sequence change resulting behaviour? Where decorators are not independent of each other?
+5. Can we declare more than 1 base method in component/decorator interface?
+
 ##### References :  
 1. Design Patterns Elements of Reusable Object-Oriented Software
 2. Head First Design Patterns
