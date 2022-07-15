@@ -34,6 +34,32 @@ date: 2022-04-29
 13. Process only the range of lines <br> `ls -l | awk 'NR == 10, NR == 20 {print NR, $0}' <br> awk 'NR < 16' .bashrc`
 14. Print number of lines in the file <br> `ls -l | awk 'END {print NR}'`
 
+#### Exercises
+
+<ol>
+   <li>
+      <details>
+         <summary>
+             <h4> How to extracts words from logs based on prefix and suffix </h4>
+             Question. Given a complex json log, create a table with columns timestamp, user, event, serverId? <br> Sample Input
+            <pre> <code>
+               2022-07-11 20:56:01,957 [qtp586055644-2114142] INFO  [p.a.h.eventHandler] {} - processing req {reqId=e14e456b-1f4b-41b6-8915-8d5f93483f78 type=POST api=/event/user auth={flow:event role:client id:1223}}
+            </code> </pre>
+            Sample output:
+            <pre>
+               <code>
+                  user:123 event:create
+                  user:345 event:restore
+               </code>
+            </pre>
+         </summary>
+         <p>
+            <code> awk -F ',' '{for(i=1;i<=NF;i++){if($i ~ /^"user.*/) printf "user %s", substr($i,8,20); if ($i ~ /^"event.*[,}]$/) printf " %s", substr($i,5,15);}{printf "\n"}}' files.txt </code>
+         </p>
+      </details>
+   </li>
+</ol>
+
 ### grep command
 
 #### Useful Concepts and Operations
