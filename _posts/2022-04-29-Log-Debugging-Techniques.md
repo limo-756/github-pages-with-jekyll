@@ -43,18 +43,21 @@ date: 2022-04-29
              <h4> How to extracts words from logs based on prefix and suffix </h4>
              Question. Given a complex json log, create a table with columns timestamp, user, event, serverId? <br> Sample Input
             <pre> <code>
-               2022-07-11 20:56:01,957 [qtp586055644-2114142] INFO  [p.a.h.eventHandler] {} - processing req {reqId=e14e456b-1f4b-41b6-8915-8d5f93483f78 type=POST api=/event/user auth={flow:event role:client id:1223}}
+               2022-07-11 20:56:01,957 [qtp586055644-2114142] INFO  [p.a.h.eventHandler] {} - processing req {reqId=a21e44ca-9e59-4000-ae0a-1ba9708b1928 type=POST api=/event/user auth={flow:event role:user id:1223}} {"userDetails":{"id":"123433","user":"abcd123", "class":"10-c", "lastLoginTime":"1657345777994"}, "event":"Create", "serverId":"1231"}
+               2022-07-11 21:43:05,124 [qtp5860556es-2114142] INFO  [p.a.h.eventHandler] {} - processing req {reqId=b7fb4a6a-99e4-4b81-ae44-30b2658d91d7 type=POST api=/event/user auth={flow:event role:user id:1223}} {"userDetails":{"id":"542134","user":"ram123", "class":"8-b", "lastLoginTime":"1657957237914"}, "event":"Restore", "serverId":"788"}
+               2022-07-11 21:49:13,786 [qtp582045644-2114142] INFO  [p.a.h.eventHandler] {} - processing req {reqId=71b313b6-7b44-4ec3-8272-bad7156f03a0 type=POST api=/event/user auth={flow:event role:user id:1223}} {"userDetails":{"id":"876123","user":"shaym123", "class":"6-a", "lastLoginTime":"1657098777994"}, "event":"Create", "serverId":"231"}
             </code> </pre>
             Sample output:
             <pre>
                <code>
-                  user:123 event:create
-                  user:345 event:restore
+                  2022-07-11 20:56:01 abcd123 Create 1231
+                  2022-07-11 21:43:05 ram123 Restore 788
+                  2022-07-11 21:49:13 shaym123 Create 231
                </code>
             </pre>
          </summary>
          <p>
-            <code> awk -F ',' '{for(i=1;i<=NF;i++){if($i ~ /^"user.*/) printf "user %s", substr($i,8,20); if ($i ~ /^"event.*[,}]$/) printf " %s", substr($i,5,15);}{printf "\n"}}' files.txt </code>
+             <code> awk -F ',' '{for(i=1;i<=NF;i++){if(i==1) printf "%s", substr($i,0,24); if($i ~ /^"user.*/) printf " %s", substr($i,8,20); if ($i ~ /^ "event.*/) printf " %s", substr($i,10,20); if($i ~ /^ "serverId.*/) printf " %s", substr($i,13,20);}{printf "\n"}}' temp | sed 's/["}]//g' </code>
          </p>
       </details>
    </li>
@@ -95,7 +98,7 @@ ID 1002 status code: 974783
 #### Useful Concepts and Operations
 
 1. basic structure of sed <br> `sed 's/string_to_be_replaced/new_string/'` <br> Eg: `echo "The Emac file manager is dired"
-   \| sed 's/red/green'` <br> This command will replace only 1 occurance of *red* with *green*
+   | sed 's/red/green'` <br> This command will replace only 1 occurance of *red* with *green*
 2. `/g` <br> It tells the sed command to substitule all the occurances <br> Eg: `echo "Jungles are green" | sed 's/[a,g]
    /A/g'`
 3. `-i` flag <br> This command is used to read the file and edit it <br> Eg: `sed -i 's/a/A/' filePath`
