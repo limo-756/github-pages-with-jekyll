@@ -37,6 +37,7 @@ When we want to extend the functionality at runtime using object composition, an
 3. How can we save the component-decorator relationship in DB? so that we can generate the same representation later.
 4. Can we use Decorator pattern where decorator sequence change resulting behaviour? Where decorators are not independent of each other?
 5. Can we declare more than 1 base method in component/decorator interface?
+6. What happens with the component identity? If a component has several methods. Can we still expose them even after decorating it with decorators?
 
 ##### References :  
 1. Design Patterns Elements of Reusable Object-Oriented Software
