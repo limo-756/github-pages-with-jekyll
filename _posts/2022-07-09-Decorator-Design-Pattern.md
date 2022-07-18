@@ -29,7 +29,13 @@ When we want to extend the functionality at runtime using object composition, an
 4. Concrete Decorator: Adds responsibilities to components
 
 ### Pros of Decorator
-1. 
+1. It provides more flexibility than inheritance as in inheritance we would be compelled to design class hierarchies that would encapsulate all the future extension.
+   With decorator future extensions are very easy to add. Also, in some cases all lot of classes pop up in inheritance for each combination.
+   In decorator only addition behaviour classes are required.
+2. Inheritance is static in nature, behaviour of object cannot be changed at run time, whereas decorator can be attached/detached at run-time.
+
+### Cons of Decorator
+1. A decorator and its component aren't identical. A decorator is just a transparent enclosure. Hence, we shouldn't rely on object identity (equality, equals, getClass()) when we use decorator pattern.
 
 #### Questions
 1. How can we detach Decorator from a component at run-time?
