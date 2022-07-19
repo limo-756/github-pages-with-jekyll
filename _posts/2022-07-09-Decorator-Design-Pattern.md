@@ -37,13 +37,28 @@ When we want to extend the functionality at runtime using object composition, an
 ### Cons of Decorator
 1. A decorator and its component aren't identical. A decorator is just a transparent enclosure. Hence, we shouldn't rely on object identity (equality, equals, getClass()) when we use decorator pattern.
 
+### Known uses
+1. Spring and various other libs uses this pattern to add authorization to methods.
+2. String @Transactional annotation is a decorator.
+3. Lombok also is a type of decorator.
+4. Spring Aspect Oriented Programing also uses decorator.
+
+
 #### Questions
-1. How can we detach Decorator from a component at run-time?
-2. How can we restrict only 1 decorator per kind?
-3. How can we save the component-decorator relationship in DB? so that we can generate the same representation later.
+1. How can we detach Decorator from a component at run-time? <br>
+   Either by creating a new object from scratch.
+   Otherwise, we can implement removeDecoration() method. <br>
+   [Reference](https://stackoverflow.com/questions/12239784/how-to-remove-decorated-object-from-decorator-pattern-in-java)
+2. How can we restrict only 1 decorator per kind? <br>
+   We can implement isDecorationPresent(decoratorClass) method, that will check if the decorator or underlying decorator is of passed type.
+3. How can we save the component-decorator relationship in DB? so that we can generate the same representation later. <br>
+   By creating a table that will store line item (component and decorator mapping). <br> 
+   [Reference](https://stackoverflow.com/questions/18278465/reflecting-a-decorator-pattern-in-mysql-database-table)
 4. Can we use Decorator pattern where decorator sequence change resulting behaviour? Where decorators are not independent of each other?
-5. Can we declare more than 1 base method in component/decorator interface?
-6. What happens with the component identity? If a component has several methods. Can we still expose them even after decorating it with decorators?
+5. Can we declare more than 1 base method in component/decorator interface? <br>
+   Yes we can expose more than 1 method
+6. What happens with the component identity? If a component has several methods. Can we still expose them even after decorating it with decorators? <br>
+   Yes
 
 ##### References :  
 1. Design Patterns Elements of Reusable Object-Oriented Software
@@ -57,3 +72,4 @@ When we want to extend the functionality at runtime using object composition, an
 9. [Decorator pattern and repositories](https://blog.antoine-augusti.fr/2015/02/decorator-pattern-repositories/)
 10. [Relational Database Design Patterns?](https://stackoverflow.com/questions/145689/relational-database-design-patterns)
 11. [Java Magazine: The Decorator Pattern in Depth](https://blogs.oracle.com/javamagazine/post/the-decorator-pattern-in-depth)
+12. [Difference between Strategy and Decorator Pattern](https://stackoverflow.com/questions/26422884/strategy-pattern-v-s-decorator-pattern)
