@@ -37,6 +37,46 @@ When we want to extend the functionality at runtime using object composition, an
 ### Cons of Decorator
 1. A decorator and its component aren't identical. A decorator is just a transparent enclosure. Hence, we shouldn't rely on object identity (equality, equals, getClass()) when we use decorator pattern.
 
+### Sample Code
+<pre>
+   <code>
+    public interface ActionComponent {
+        void action();
+    }
+
+    public static class HttpCallAction implements ActionComponent {
+
+        @Override
+        public void action() {
+            System.out.println("Making an http call");
+        }
+
+    }
+
+    public interface ActionDecorator {
+        void action();
+    }
+
+    public static class TimeLoggerDecorator implements ActionDecorator {
+        private final ActionComponent actionComponent;
+
+        public TimeLoggerDecorator(ActionComponent actionComponent) {this.actionComponent = actionComponent;}
+
+        @Override
+        public void action() {
+            System.out.printf("Starting action at %s\n", System.currentTimeMillis());
+            actionComponent.action();
+            System.out.printf("Action completed at %s\n", System.currentTimeMillis());
+
+        }
+    }
+
+    public static void main(String[] args) {
+        new TimeLoggerDecorator(new HttpCallAction()).action();
+    }
+   </code>
+</pre>
+
 ### Known uses
 1. Spring and various other libs uses this pattern to add authorization to methods.
 2. String @Transactional annotation is a decorator.
