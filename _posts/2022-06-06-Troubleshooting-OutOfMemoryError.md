@@ -31,6 +31,16 @@ Dominator Tree has the following properties:
 
 ![MAT Overview Window](../../../assets/posts/Mat_Overview_window.png "MAT Overview Window Image")
 
+#### What Heap dump contains
+1. All Objects: Class, fields, primitive values and references
+2. All Classes: Classloader, name, super class, static fields
+3. Garbage Collection Roots & Objects rechable by JVM
+4. Thread Stacks and Local Variables
+<b> A heap dump does not contain allocation information so it cannot resolve questions like who had created the objects and where they have been created. </b>
+   
+### Leak Suspect Report
+To run leak suspect report do <b> Expert System Test </b> > <b> Leak Suspects </b>
+
 <details> 
   <summary> <h4> Difference between retained heap and shallow heap </h4> </summary>
   <p> <b> Shallow heap size </b> : It is the size of the object. 
