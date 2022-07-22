@@ -83,6 +83,20 @@ When we want to extend the functionality at runtime using object composition, an
 3. Lombok also is a type of decorator.
 4. Spring Aspect Oriented Programing also uses decorator.
 
+### Exercises
+<ol>
+   <li>
+      <details>
+         <summary>
+            Which Solid principle does Decorator Pattern follow?
+         </summary>
+         <p>
+            Open close principle. As we can add new responsibility by adding new decorators without changing the code of components.
+         </p>
+      </details>
+   </li>
+</ol>
+
 
 #### Questions
 1. How can we detach Decorator from a component at run-time? <br>
@@ -98,7 +112,7 @@ When we want to extend the functionality at runtime using object composition, an
 5. Can we declare more than 1 base method in component/decorator interface? <br>
    Yes we can expose more than 1 method
 6. What happens with the component identity? If a component has several methods. Can we still expose them even after decorating it with decorators? <br>
-   Yes
+   A decorator should be a mirror of a component that's why decorator interface extends the component interface (same type).
 
 ##### References :  
 1. Design Patterns Elements of Reusable Object-Oriented Software
