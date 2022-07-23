@@ -114,6 +114,8 @@ When we want to extend the functionality at runtime using object composition, an
 6. What happens with the component identity? If a component has several methods. Can we still expose them even after decorating it with decorators? <br>
    A decorator should be a mirror of a component that's why decorator interface extends the component interface (same type).
 
+Read Head First book
+
 ##### References :  
 1. Design Patterns Elements of Reusable Object-Oriented Software
 2. Head First Design Patterns
