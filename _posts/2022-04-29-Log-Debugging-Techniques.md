@@ -37,6 +37,10 @@ date: 2022-04-29
 ### grep command
 
 #### Useful Concepts and Operations
+1. -C n <br> Print above and below n lines of the matched line <br> Eg: `grep -C 5 'event:X' fileName.log`
+2. -A n <br> Print above n lines of the matched line <br> Eg: `grep -A 5 'event:X' fileName.log`
+3. -B n <br> Print below n lines of the matched line <br> Eg: `grep -B 5 'event:X' fileName.log`
+4. -e 'Pattern1' -e 'Pattern2' <br> Print the lines matching pattern 1 or pattern 2 <br> `grep -e 'eventA' -e 'eventB' fileName.log` 
 
 <ol> <li> <details> <summary> How to grep using result of previous grep <br> Question. Grep the status codes for ids with xyz occurred event <br> Sample Input 
 <pre><code> 
