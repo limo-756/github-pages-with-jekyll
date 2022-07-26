@@ -147,6 +147,7 @@ Eg: `absent_over_time(nonexistent{job="myjob"}[1h])`
 19. `holt_winters(v range-vector, sf scalar, tf scalar)`: This function smoothens the time series data by using the trends in the time series. Lower the smoothening factor (sf) more importance is given to real data points. Higher the trend factor (tf) the more trends in the data is considered. Both sf and tf must be between 0 and 1. **This function should only be used with guages**.
 20. `rate(v range-vector)`: Calculates the average per second increase of time series in the range vector. This function extrapolates the values to account for server restarts, missed values and imperfect alignment of scrape cycles with the range's time period 
 21. `increase(v range-vector)`: Calculates the increase in the time series in the range vector. It is same as range method multiplied by number of seconds in the specified window. `increase()` method should only be used with counters <br> Breaks in monotonicity is taken care of. Also, increase is extrapolated to cover the full time range as specified in the range vector selector. So it is possible to get decimal values even when increase is in integer.
+22. `irate(v range-vector)`: calculates the per-second instant rate of increase of the time series in the range vector. This is used because it automatically adjust for breaks in monotonicity. It should only be used when graphing volatile, fast-moving counters.
 
 
 <details>
