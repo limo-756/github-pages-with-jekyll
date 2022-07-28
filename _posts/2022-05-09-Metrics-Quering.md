@@ -148,8 +148,8 @@ Eg: `absent_over_time(nonexistent{job="myjob"}[1h])`
 20. `rate(v range-vector)`: Calculates the average per second increase of time series in the range vector. This function extrapolates the values to account for server restarts, missed values and imperfect alignment of scrape cycles with the range's time period 
 21. `increase(v range-vector)`: Calculates the increase in the time series in the range vector. It is same as range method multiplied by number of seconds in the specified window. `increase()` method should only be used with counters <br> Breaks in monotonicity is taken care of. Also, increase is extrapolated to cover the full time range as specified in the range vector selector. So it is possible to get decimal values even when increase is in integer.
 22. `irate(v range-vector)`: calculates the per-second instant rate of increase of the time series in the range vector. This is used because it automatically adjust for breaks in monotonicity. It should only be used when graphing volatile, fast-moving counters.
+23. `ln(v instant-vector)`: calculates natural logarithm for all elements in timeseries. 
 
-No updates
 
 <details>
     <summary>How many responses larger than 4kb were served on 12th June 2022 between 14:00 UTC to 14:15 UTC?</summary>
