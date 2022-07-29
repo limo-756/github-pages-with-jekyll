@@ -120,7 +120,8 @@ be topped off with different things like whipped milk, soya, chocolate etc., Eve
 It is possible some toppings that cannot be added to some coffees. Also, a person can ask for multiple layers of same toppings.
 We need to design a software that can easily calculate cost and description of a beverage.
 
-1. <h3> Inheritance Solution </h3> <br> we will add variables for each 
+1. <h3> Inheritance Solution </h3> <br> We can add instance variables for each topping and use inheritance to keep track of toppings.
+
 
 ##### References :  
 1. Design Patterns Elements of Reusable Object-Oriented Software
