@@ -121,6 +121,41 @@ It is possible some toppings that cannot be added to some coffees. Also, a perso
 We need to design a software that can easily calculate cost and description of a beverage.
 
 1. <h3> Inheritance Solution </h3> <br> We can add instance variables for each topping and use inheritance to keep track of toppings.
+![Bruteforce Solution](../../../assets/posts/Decorator_brute_force.png)
+
+<ol>
+   <li>
+      <details>
+         <summary>
+            What happens when we add a new type of Toppings?
+         </summary>
+         <p>
+            The Top level Beverage class will need to be modified and all the concrete classes will need to support the new type of topping even if 
+            some concrete class does not support new topping.
+         </p>
+      </details>
+   </li>
+   <li>
+      <details>
+         <summary>
+            What happens if topping price changes?
+         </summary>
+         <p>
+            We will need to modify the top level Beverage class.
+         </p>
+      </details>
+   </li>
+   <li>
+      <details>
+         <summary>
+            Can we add topping multiple times, if the customer wants it?
+         </summary>
+         <p>
+            No straight forward solution for this. For every topping w
+         </p>
+      </details>
+   </li>
+</ol>
 
 
 ##### References :  
