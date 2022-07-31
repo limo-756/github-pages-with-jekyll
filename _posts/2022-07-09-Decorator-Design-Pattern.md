@@ -108,7 +108,8 @@ When we want to extend the functionality at runtime using object composition, an
 3. How can we save the component-decorator relationship in DB? so that we can generate the same representation later. <br>
    By creating a table that will store line item (component and decorator mapping). <br> 
    [Reference](https://stackoverflow.com/questions/18278465/reflecting-a-decorator-pattern-in-mysql-database-table)
-4. Can we use Decorator pattern where decorator sequence change resulting behaviour? Where decorators are not independent of each other?
+4. Can we use Decorator pattern where decorator sequence change resulting behaviour? Where decorators are not independent of each other? <br>
+   In this case, it will be client responsibility to compose objects in the intended way.
 5. Can we declare more than 1 base method in component/decorator interface? <br>
    Yes we can expose more than 1 method
 6. What happens with the component identity? If a component has several methods. Can we still expose them even after decorating it with decorators? <br>
@@ -151,7 +152,7 @@ We need to design a software that can easily calculate cost and description of a
             Can we add topping multiple times, if the customer wants it?
          </summary>
          <p>
-            No straight forward solution for this. For every topping w
+            No straight forward solution for this. For every topping we will need to store the count.
          </p>
       </details>
    </li>
