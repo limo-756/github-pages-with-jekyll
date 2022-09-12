@@ -63,6 +63,16 @@ To run leak suspect report do <b> Expert System Test </b> > <b> Leak Suspects </
   <p> -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/opt/tmp/heapdump.bin <br> <a href="https://blog.heaphero.io/2017/10/13/how-to-capture-java-heap-dumps-7-options/"> Reference </a> </p>
 </details>
 
+### How to query Heap Objects (OQL) 
+OQL is just like SQL query. Classes are tables, objects are rows and fields are columns in OQL.
+
+```
+SELECT *
+FROM [ INSTANCEOF ] <class name="name">
+[ WHERE <filter-expression> ]
+</filter-expression></class>
+```
+OQL is in the top bar with Icon containing OQL.
 
 ##### References :  
 1. [Youtube: Troubleshooting OutOfMemoryError - Heap dump, Eclipse MAT](https://www.youtube.com/watch?v=SuguH8YBl5g)
