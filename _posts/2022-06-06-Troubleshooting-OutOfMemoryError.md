@@ -72,7 +72,8 @@ FROM [ INSTANCEOF ] <class name="name">
 [ WHERE <filter-expression> ]
 </filter-expression></class>
 ```
-OQL is in the top bar with Icon containing OQL.
+OQL is in the top bar with Icon containing OQL. <br>
+We can also copy OQL query from Histogram window by selection few entries > Copy > OQL Query.
 
 ##### References :  
 1. [Youtube: Troubleshooting OutOfMemoryError - Heap dump, Eclipse MAT](https://www.youtube.com/watch?v=SuguH8YBl5g)
