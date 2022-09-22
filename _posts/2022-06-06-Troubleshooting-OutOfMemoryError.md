@@ -36,10 +36,18 @@ Dominator Tree has the following properties:
 2. All Classes: Classloader, name, super class, static fields
 3. Garbage Collection Roots & Objects rechable by JVM
 4. Thread Stacks and Local Variables
-<b> A heap dump does not contain allocation information so it cannot resolve questions like who had created the objects and where they have been created. </b>
+
+#### Limitations
+1. <b> A heap dump does not contain allocation information so it cannot resolve questions like who had created the objects and where they have been created. </b>
    
 ### Leak Suspect Report
-To run leak suspect report do <b> Expert System Test </b> > <b> Leak Suspects </b>
+To run leak suspect report do <b> Expert System Test </b> > <b> Leak Suspects </b> <br>
+
+Type of object classes contained in Leak suspect report <br>
+1. Leak suspect report contains the largest objects present on the dominator tree which retains a significant amount of memory (default is 10%)
+2. Objects that has low memory foot-print, but they are in very large number. This type of object classes are found using the dominator tree, grouped by class. 
+   Eg: char[], int etc.
+3. 
 
 <details> 
   <summary> <h4> Difference between retained heap and shallow heap </h4> </summary>
